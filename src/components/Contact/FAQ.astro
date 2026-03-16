@@ -1,0 +1,431 @@
+---
+// FAQ Component
+// Modern accordion UI with left content and right accordion
+---
+
+<section class="faq-section">
+    <div class="faq-container">
+        <!-- Left Content -->
+        <div class="faq-content">
+            <div class="faq-label">FAQ</div>
+            <h2 class="faq-title">Frequently Asked Questions</h2>
+            <p class="faq-description">
+                We compiled a list of answers to address your most pressing
+                questions regarding our Services.
+            </p>
+        </div>
+
+        <!-- Right Accordion -->
+        <div class="faq-accordion-wrapper">
+            <div class="faq-accordion" id="faqAccordion">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-question"
+                            >How long does a typical project take?</span
+                        >
+                        <svg
+                            class="faq-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v14m7-7H5"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p class="faq-answer">
+                            Project timelines vary depending on the scope and
+                            complexity. Most residential projects take between
+                            1-4 weeks. We'll provide a detailed timeline during
+                            the initial consultation.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-question"
+                            >Do you offer warranties on your work?</span
+                        >
+                        <svg
+                            class="faq-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v14m7-7H5"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p class="faq-answer">
+                            Yes, we stand behind our work. All projects come
+                            with a 1-year warranty on labor and materials.
+                            Extended warranties are available for additional
+                            peace of mind.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-question"
+                            >What payment methods do you accept?</span
+                        >
+                        <svg
+                            class="faq-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v14m7-7H5"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p class="faq-answer">
+                            We accept all major credit cards, checks, bank
+                            transfers, and financing options. A 50% deposit is
+                            required to schedule your project, with the balance
+                            due upon completion.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-question"
+                            >Are your contractors licensed and insured?</span
+                        >
+                        <svg
+                            class="faq-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v14m7-7H5"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p class="faq-answer">
+                            Absolutely. All our contractors are fully licensed,
+                            insured, and bonded. We verify credentials for every
+                            team member and maintain comprehensive liability
+                            coverage.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5 -->
+                <div class="faq-item">
+                    <button class="faq-header" aria-expanded="false">
+                        <span class="faq-question"
+                            >How do I get a free estimate?</span
+                        >
+                        <svg
+                            class="faq-icon"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M12 5v14m7-7H5"></path>
+                        </svg>
+                    </button>
+                    <div class="faq-content hidden">
+                        <p class="faq-answer">
+                            Simply fill out our contact form or call us
+                            directly. We'll schedule a convenient time to visit
+                            your property, assess the work, and provide a
+                            detailed, no-obligation estimate.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    :root {
+        --midnight-navy: #0a1931;
+        --helios-orange: #f48c06;
+        --steel-pewter: #99b0bb;
+        --parchment: #f5f5f5;
+        --machinist: #7e7e7e;
+        --muted: #9ca3af;
+    }
+
+    .faq-section {
+        background: linear-gradient(135deg, #0a1931 0%, #1a2a4a 100%);
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family:
+            "Poppins",
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+    }
+
+    .faq-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1400px;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Left Content Section */
+    .faq-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2rem;
+    }
+
+    .faq-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        color: var(--helios-orange);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+
+    .faq-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .faq-description {
+        font-size: 1.1rem;
+        color: var(--steel-pewter);
+        line-height: 1.6;
+        max-width: 500px;
+    }
+
+    /* Right Accordion Section */
+    .faq-accordion-wrapper {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(244, 140, 6, 0.2);
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        backdrop-filter: blur(10px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .faq-accordion {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        flex: 1;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(153, 176, 187, 0.2);
+    }
+
+    .faq-item:last-child {
+        border-bottom: none;
+    }
+
+    .faq-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: left;
+    }
+
+    .faq-header:hover {
+        color: var(--helios-orange);
+    }
+
+    .faq-header:focus {
+        outline: 2px solid var(--helios-orange);
+        outline-offset: 2px;
+    }
+
+    .faq-question {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #ffffff;
+        transition: color 0.3s ease;
+    }
+
+    .faq-header:hover .faq-question {
+        color: var(--helios-orange);
+    }
+
+    .faq-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+        color: var(--helios-orange);
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .faq-item.active .faq-icon {
+        transform: rotate(45deg);
+    }
+
+    .faq-content {
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq-content.hidden {
+        display: none;
+    }
+
+    .faq-answer {
+        font-size: 0.95rem;
+        color: var(--steel-pewter);
+        line-height: 1.6;
+        padding-bottom: 1.5rem;
+        animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        .faq-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .faq-title {
+            font-size: 2.5rem;
+        }
+
+        .faq-accordion-wrapper {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .faq-section {
+            padding: 1rem;
+            min-height: auto;
+        }
+
+        .faq-container {
+            gap: 1.5rem;
+        }
+
+        .faq-content {
+            padding: 1rem;
+        }
+
+        .faq-title {
+            font-size: 2rem;
+        }
+
+        .faq-description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .faq-accordion-wrapper {
+            padding: 1.5rem;
+        }
+
+        .faq-header {
+            padding: 1rem 0;
+        }
+
+        .faq-question {
+            font-size: 0.95rem;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const accordion = document.getElementById("faqAccordion");
+        if (!accordion) return;
+
+        const items = accordion.querySelectorAll(".faq-item");
+
+        items.forEach((item) => {
+            const header = item.querySelector(
+                ".faq-header",
+            ) as HTMLButtonElement | null;
+            const content = item.querySelector(
+                ".faq-content",
+            ) as HTMLElement | null;
+
+            if (!header || !content) return;
+
+            header.addEventListener("click", () => {
+                const isActive = item.classList.contains("active");
+
+                // Close all items
+                items.forEach((i) => {
+                    i.classList.remove("active");
+                    const itemContent = i.querySelector(".faq-content");
+                    const itemHeader = i.querySelector(".faq-header");
+                    if (itemContent) itemContent.classList.add("hidden");
+                    if (itemHeader)
+                        itemHeader.setAttribute("aria-expanded", "false");
+                });
+
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add("active");
+                    content.classList.remove("hidden");
+                    header.setAttribute("aria-expanded", "true");
+                }
+            });
+        });
+    });
+</script>
