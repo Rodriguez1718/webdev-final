@@ -1,4 +1,6 @@
 ---
+import Button from "../ui/Button.astro";
+
 // Footer component with 4-column layout
 ---
 
@@ -152,12 +154,11 @@
               placeholder="Enter your email"
               class="w-full px-3 py-2 bg-white border border-[#99B0BB] rounded-md text-[#0A1931] placeholder-[#9CA3AF] focus:outline-none focus:ring-2 focus:ring-[#F48C06] focus:border-transparent font-primary"
             >
-            <button 
-              type="submit"
-              class="w-full btn-primary hover:bg-[#e07a05] text-white font-semibold py-2 px-4 rounded-md transition-colors duration-200 font-primary"
-            >
-              Subscribe
-            </button>
+            <div class="flex grow flex-1">
+              <Button variant="primary" fullWidth>
+                Subscribe
+              </Button>
+            </div>
           </form>
         </div>
       </div>
