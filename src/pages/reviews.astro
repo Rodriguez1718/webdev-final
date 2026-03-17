@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/layout/CTASection.astro";
 import Hero2 from "../components/layout/Hero2.astro";
+import Reviews from "../components/layout/Reviews.astro";
 ---
 
 <BaseLayout>
@@ -11,113 +12,9 @@ import Hero2 from "../components/layout/Hero2.astro";
             headline="What Our Clients Say"
             highlightWord="Clients"
             description="Discover how we've helped thousands of contractors and trades professionals transform their businesses and achieve remarkable growth."
-            showForm={true}
+            showForm={false}
         />
-        <section
-            class="py-20 px-4 md:px-8 lg:px-12"
-            style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 90%, var(--steel-pewter) 10%) 100%);"
-        >
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16"></div>
-
-                <div
-                    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                >
-                    <!-- Review Card 1 -->
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300"
-                    >
-                        <div class="flex items-center gap-1 mb-4">
-                            <span style="color: var(--helios-orange);"
-                                >★★★★★</span
-                            >
-                        </div>
-                        <p class="text-white mb-6 leading-relaxed">
-                            "BuildPro completely transformed our online
-                            presence. The leads keep coming and our business has
-                            grown exponentially!"
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 rounded-full"
-                                style="background: var(--helios-orange);"
-                            >
-                            </div>
-                            <div>
-                                <p class="text-white font-semibold">
-                                    John Martinez
-                                </p>
-                                <p class="text-steel-pewter text-sm">
-                                    HVAC Services
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review Card 2 -->
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300"
-                    >
-                        <div class="flex items-center gap-1 mb-4">
-                            <span style="color: var(--helios-orange);"
-                                >★★★★★</span
-                            >
-                        </div>
-                        <p class="text-white mb-6 leading-relaxed">
-                            "Professional, responsive, and results-driven. They
-                            understood our business needs and delivered beyond
-                            expectations."
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 rounded-full"
-                                style="background: var(--helios-orange);"
-                            >
-                            </div>
-                            <div>
-                                <p class="text-white font-semibold">
-                                    Sarah Rodriguez
-                                </p>
-                                <p class="text-steel-pewter text-sm">
-                                    Plumbing Contractor
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Review Card 3 -->
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8 hover:bg-white/15 transition-all duration-300"
-                    >
-                        <div class="flex items-center gap-1 mb-4">
-                            <span style="color: var(--helios-orange);"
-                                >★★★★★</span
-                            >
-                        </div>
-                        <p class="text-white mb-6 leading-relaxed">
-                            "The website design is stunning and the booking
-                            system has cut our admin time in half. Highly
-                            recommended!"
-                        </p>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-12 h-12 rounded-full"
-                                style="background: var(--helios-orange);"
-                            >
-                            </div>
-                            <div>
-                                <p class="text-white font-semibold">
-                                    Mike Thompson
-                                </p>
-                                <p class="text-steel-pewter text-sm">
-                                    Electrical Services
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <Reviews />
         <CTASection />
     </main>
 </BaseLayout>
