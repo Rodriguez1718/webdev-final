@@ -460,6 +460,7 @@
     }
 
     .submit-button {
+        width: 100%;
         background: linear-gradient(
             135deg,
             var(--helios-orange) 0%,
@@ -475,6 +476,12 @@
         transition: all 0.3s ease;
         text-transform: uppercase;
         letter-spacing: 0.05em;
+        font-family:
+            "Poppins",
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
     }
 
     .submit-button:hover {
@@ -484,6 +491,11 @@
 
     .submit-button:active {
         transform: translateY(0);
+    }
+
+    .submit-button:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(244, 140, 6, 0.3);
     }
 
     .success-alert,
