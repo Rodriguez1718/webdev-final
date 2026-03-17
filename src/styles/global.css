@@ -6,6 +6,7 @@
   --midnight-navy: #0A1931;
   --helios-orange: #F48C06;
   --steel-pewter: #99B0BB;
+  --steel-blue: #1B4D7E;
   
   /* UI Surfaces & Text */
   --parchment: #F5F5F5;
@@ -27,6 +28,8 @@
   --text-muted: var(--muted);
   --background: #ffffff;
   --surface: var(--parchment);
+  --button-color: var(--steel-blue);
+  --button-hover: var(--steel-pewter);
   
   /* Font Variables */
   --font-primary: 'Poppins', theme('fontFamily.sans');
@@ -102,7 +105,7 @@
 }
 /* Global Component Classes */
 .btn-primary {
-  @apply bg-[#F48C06] hover:bg-[#e07a05] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+  @apply bg-[var(--button-color)] hover:bg-[#144069] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
 }
 
 .btn-secondary {
