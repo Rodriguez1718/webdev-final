@@ -20,57 +20,109 @@ const {
     "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop",
     "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
-  ]
+    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop",
+  ],
 } = Astro.props;
 ---
 
 <section class="relative h-screen flex items-center overflow-hidden">
   <!-- Background Image Slideshow -->
   <div class="absolute inset-0">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image active" style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"></div>
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"></div>
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"></div>
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"></div>
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"></div>
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image active"
+      style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
+      style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
+      style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
+      style="background-image: url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
+      style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+    >
+    </div>
   </div>
-  
+
   <!-- Dark Overlay -->
-  <div class="absolute inset-0 opacity-60" style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 80%, var(--steel-pewter) 20%) 100%);"></div>
+  <div
+    class="absolute inset-0 opacity-60"
+    style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 80%, var(--steel-pewter) 20%) 100%);"
+  >
+  </div>
 
   <!-- Content -->
   <div class="relative z-10 max-w-7xl mx-auto px-8">
     <div class="space-y-8 text-left -ml-8">
-      
       <!-- Small Title -->
       <div class="animate-[fade-in_1s_ease-out]">
-        <span class="inline-block font-semibold tracking-widest uppercase text-sm" style="color: var(--helios-orange);">
+        <span
+          class="inline-block font-semibold tracking-widest uppercase text-sm"
+          style="color: var(--helios-orange);"
+        >
           Your Growth Partner
         </span>
       </div>
 
       <!-- Main Heading -->
       <div class="space-y-4 animate-[fade-in-up_1s_ease-out]">
-        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-left">
+        <h1
+          class="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-left"
+        >
           <span class="text-white">Build. </span>
           <span style="color: var(--helios-orange);">Grow. </span>
           <span class="text-white">Dominate.</span>
         </h1>
-        
-        <p class="text-lg md:text-xl leading-relaxed max-w-2xl text-white text-left">
-          Over 2,500 contractors and trades professionals have trusted us to elevate their digital presence. Transform your business online and reach more customers than ever before.
+
+        <p
+          class="text-lg md:text-xl leading-relaxed max-w-2xl text-white text-left"
+        >
+          Over 2,500 contractors and trades professionals have trusted us to
+          elevate their digital presence. Transform your business online and
+          reach more customers than ever before.
         </p>
       </div>
 
       <!-- CTA Button -->
-      <div class="pt-4 animate-[fade-in-up_1s_ease-out] opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
-        <button class="group relative inline-flex items-center justify-between px-6 py-3 text-white text-base font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden" style="background-color: var(--helios-orange); min-width: 200px;">
+      <div
+        class="pt-4 animate-[fade-in-up_1s_ease-out] opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]"
+      >
+        <button
+          class="group relative inline-flex items-center justify-between px-6 py-3 text-white text-base font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden"
+          style="background-color: var(--helios-orange); min-width: 200px;"
+        >
           <!-- Hover overlay for swipe effect -->
-          <div class="absolute inset-0 bg-[var(--midnight-navy)] transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-full"></div>
+          <div
+            class="absolute inset-0 bg-[var(--midnight-navy)] transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-full"
+          >
+          </div>
           <span class="relative z-10 tracking-wide">VIEW OUR WORK</span>
-          <div class="relative z-10 w-10 h-10 rounded-full flex items-center justify-center ml-3 transition-all duration-300 group-hover:rotate-45" style="background-color: var(--midnight-navy);">
-            <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 17L17 7M17 7H7M17 7V17"/>
+          <div
+            class="relative z-10 w-10 h-10 rounded-full flex items-center justify-center ml-3 transition-all duration-300 group-hover:rotate-45"
+            style="background-color: var(--midnight-navy);"
+          >
+            <svg
+              class="w-4 h-4 text-white"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M7 17L17 7M17 7H7M17 7V17"></path>
             </svg>
           </div>
         </button>
@@ -79,39 +131,53 @@ const {
   </div>
 
   <!-- Slideshow Navigation Dots -->
-  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3 hidden">
-    <button class="slideshow-dot w-3 h-3 rounded-full bg-amber-400 transition-all duration-300" data-slide="0"></button>
-    <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300" data-slide="1"></button>
-    <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300" data-slide="2"></button>
-    <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300" data-slide="3"></button>
-    <button class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300" data-slide="4"></button>
+  <div
+    class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 flex space-x-3 hidden"
+  >
+    <button
+      class="slideshow-dot w-3 h-3 rounded-full bg-amber-400 transition-all duration-300"
+      data-slide="0"></button>
+    <button
+      class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300"
+      data-slide="1"></button>
+    <button
+      class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300"
+      data-slide="2"></button>
+    <button
+      class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300"
+      data-slide="3"></button>
+    <button
+      class="slideshow-dot w-3 h-3 rounded-full bg-white/50 hover:bg-white/75 transition-all duration-300"
+      data-slide="4"></button>
   </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slideshow-image');
-    const dots = document.querySelectorAll('.slideshow-dot');
+    const slides = document.querySelectorAll(".slideshow-image");
+    const dots = document.querySelectorAll(".slideshow-dot");
     const totalSlides = slides.length;
 
     function showSlide(index) {
       // Remove active class from all slides and dots
-      slides.forEach(slide => slide.classList.remove('active', 'opacity-100'));
-      dots.forEach(dot => dot.classList.remove('active'));
-      
+      slides.forEach((slide) =>
+        slide.classList.remove("active", "opacity-100"),
+      );
+      dots.forEach((dot) => dot.classList.remove("active"));
+
       // Add active class to current slide and dot
-      slides[index].classList.add('active', 'opacity-100');
-      dots[index].classList.add('active');
-      
+      slides[index].classList.add("active", "opacity-100");
+      dots[index].classList.add("active");
+
       // Update dot styles
       dots.forEach((dot, i) => {
         if (i === index) {
-          dot.classList.remove('bg-white/50');
-          dot.classList.add('bg-amber-400');
+          dot.classList.remove("bg-white/50");
+          dot.classList.add("bg-amber-400");
         } else {
-          dot.classList.remove('bg-amber-400');
-          dot.classList.add('bg-white/50');
+          dot.classList.remove("bg-amber-400");
+          dot.classList.add("bg-white/50");
         }
       });
     }
@@ -126,7 +192,7 @@ const {
 
     // Manual navigation with dots
     dots.forEach((dot, index) => {
-      dot.addEventListener('click', () => {
+      dot.addEventListener("click", () => {
         currentSlide = index;
         showSlide(currentSlide);
       });
@@ -140,12 +206,22 @@ const {
   }
 
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 
   @keyframes fade-in-up {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>

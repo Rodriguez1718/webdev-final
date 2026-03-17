@@ -12,18 +12,18 @@
   --helios-orange: #F48C06;
   --steel-pewter: #99B0BB;
   --steel-blue: #1B4D7E;
-  
+
   /* UI Surfaces & Text */
   --parchment: #F5F5F5;
   --machinist: #7E7E7E;
   --muted: #9CA3AF;
-  
+
   /* Status & Data */
   --success: #34D399;
   --info: #22D3EE;
   --warning: #F5A623;
   --highlight: #F472B6;
-  
+
   /* Semantic Color Mapping */
   --primary-color: var(--midnight-navy);
   --secondary-color: var(--helios-orange);
@@ -35,7 +35,7 @@
   --surface: var(--parchment);
   --button-color: var(--steel-blue);
   --button-hover: var(--steel-pewter);
-  
+
   /* Font Variables */
   --font-primary: 'Poppins', ui-sans-serif, system-ui, sans-serif;
   --font-secondary: ui-serif, Georgia, serif;
@@ -84,6 +84,10 @@
   color: var(--muted);
 }
 
+.text-steel-pewter {
+  color: var(--steel-pewter);
+}
+
 /* Enhanced Component Classes */
 .btn-success {
   @apply bg-[#34D399] hover:bg-[#10b981] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
@@ -108,6 +112,7 @@
 .alert-info {
   @apply bg-blue-50 border border-[#22D3EE] text-blue-800 p-4 rounded-lg;
 }
+
 /* Global Component Classes */
 .btn-primary {
   @apply bg-[var(--button-color)] hover:bg-[#144069] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
@@ -148,6 +153,7 @@
 .section-padding {
   @apply py-16 md:py-24;
 }
+
 /* Burger Menu Animation */
 .burger-btn.open .line-top {
   width: 24px;
