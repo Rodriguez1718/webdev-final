@@ -1,0 +1,570 @@
+---
+// ContactForm Component
+// Landscape design with left content and right form
+---
+
+<div class="contact-section-wrapper">
+    <div class="contact-container">
+        <!-- Left Content Section -->
+        <div class="content-section">
+            <div class="content-inner">
+                <h2 class="content-title">Get In Touch</h2>
+                <p class="content-subtitle">
+                    Let us show you how we can transform your project and share
+                    your sensitive data securely.
+                </p>
+
+                <!-- Contact Info Cards -->
+                <div class="info-cards">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"
+                                ></path>
+                                <path
+                                    d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Email</p>
+                            <p class="info-value">info@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773c.058.3.102.605.102.924 0 1.748.585 3.364 1.56 4.657l1.548.773a1 1 0 01.54 1.06l-.74 4.435a1 1 0 01-.986.836H3a1 1 0 01-1-1V3z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Phone</p>
+                            <p class="info-value">(555) 123-4567</p>
+                        </div>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <svg fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    fill-rule="evenodd"
+                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                    clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div class="info-text">
+                            <p class="info-label">Address</p>
+                            <p class="info-value">123 Main Street, City</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Form Section -->
+        <div class="form-section">
+            <form id="contactForm" class="contact-form-container">
+                <!-- Form Fields Grid -->
+                <div class="form-fields">
+                    <!-- Full Name Field -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">FULL NAME</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Your full name"
+                            class="form-input"
+                            required
+                        />
+                        <span class="error-message hidden"></span>
+                    </div>
+
+                    <!-- Company Name Field -->
+                    <div class="form-group">
+                        <label for="company" class="form-label"
+                            >COMPANY NAME</label
+                        >
+                        <input
+                            type="text"
+                            id="company"
+                            name="company"
+                            placeholder="Your company name"
+                            class="form-input"
+                            required
+                        />
+                        <span class="error-message hidden"></span>
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">EMAIL</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Your email address"
+                            class="form-input"
+                            required
+                        />
+                        <span class="error-message hidden"></span>
+                    </div>
+
+                    <!-- Phone Field -->
+                    <div class="form-group">
+                        <label for="phone" class="form-label">PHONE</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Your phone number"
+                            class="form-input"
+                            required
+                        />
+                        <span class="error-message hidden"></span>
+                    </div>
+
+                    <!-- Service Type Field -->
+                    <div class="form-group full-width">
+                        <label for="serviceType" class="form-label"
+                            >SERVICE TYPE</label
+                        >
+                        <select
+                            id="serviceType"
+                            name="serviceType"
+                            class="form-input form-select"
+                            required
+                        >
+                            <option value="">Select a service...</option>
+                            <option value="plumbing">Plumbing</option>
+                            <option value="electrical">Electrical</option>
+                            <option value="hvac">HVAC</option>
+                            <option value="carpentry">Carpentry</option>
+                            <option value="roofing">Roofing</option>
+                            <option value="general">General Contracting</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message hidden"></span>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group full-width">
+                        <label for="message" class="form-label">MESSAGE</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Tell us about your project..."
+                            rows="3"
+                            class="form-input form-textarea"
+                            required></textarea>
+                        <span class="error-message hidden"></span>
+                    </div>
+                </div>
+
+                <!-- Privacy Checkbox -->
+                <div class="privacy-check">
+                    <input
+                        type="checkbox"
+                        id="privacy"
+                        name="privacy"
+                        required
+                    />
+                    <label for="privacy" class="privacy-label">
+                        I agree that my personal data will be processed in
+                        accordance with the privacy policy
+                    </label>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-button">
+                    Send Message
+                </button>
+
+                <!-- Success Message -->
+                <div id="successMessage" class="success-alert hidden">
+                    <div class="alert-content">
+                        <svg
+                            class="alert-icon"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span
+                            >Thank you! Your message has been sent successfully.</span
+                        >
+                    </div>
+                </div>
+
+                <!-- Error Message -->
+                <div id="errorMessage" class="error-alert hidden">
+                    <div class="alert-content">
+                        <svg
+                            class="alert-icon"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                        >
+                            <path
+                                fill-rule="evenodd"
+                                d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                        <span id="errorText"
+                            >Please check your form and try again.</span
+                        >
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    :root {
+        --midnight-navy: #0a1931;
+        --helios-orange: #f48c06;
+        --steel-pewter: #99b0bb;
+        --highlight: #f472b6;
+        --muted: #9ca3af;
+        --parchment: #f5f5f5;
+    }
+
+    .contact-section-wrapper {
+        background: linear-gradient(135deg, #0a1931 0%, #1a2a4a 100%);
+        padding: 2rem;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family:
+            "Poppins",
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+    }
+
+    .contact-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        max-width: 1400px;
+        width: 100%;
+        align-items: center;
+    }
+
+    /* Left Content Section */
+    .content-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .content-inner {
+        padding: 2rem;
+    }
+
+    .content-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .content-subtitle {
+        font-size: 1.1rem;
+        color: var(--steel-pewter);
+        line-height: 1.6;
+        margin-bottom: 3rem;
+        max-width: 500px;
+    }
+
+    .info-cards {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .info-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background-color: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(244, 140, 6, 0.2);
+        border-radius: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .info-card:hover {
+        background-color: rgba(255, 255, 255, 0.08);
+        border-color: var(--helios-orange);
+    }
+
+    .info-icon {
+        width: 3rem;
+        height: 3rem;
+        background: linear-gradient(
+            135deg,
+            var(--helios-orange) 0%,
+            #ff6b35 100%
+        );
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        flex-shrink: 0;
+    }
+
+    .info-icon svg {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    .info-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+    }
+
+    .info-label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--steel-pewter);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .info-value {
+        font-size: 1rem;
+        color: #ffffff;
+        font-weight: 500;
+    }
+
+    /* Right Form Section */
+    .form-section {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(244, 140, 6, 0.2);
+        border-radius: 1.5rem;
+        padding: 2.5rem;
+        backdrop-filter: blur(10px);
+    }
+
+    .contact-form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.25rem;
+    }
+
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .form-group.full-width {
+        grid-column: 1 / -1;
+    }
+
+    .form-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        color: #ffffff;
+        text-transform: uppercase;
+    }
+
+    .form-input {
+        background-color: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(153, 176, 187, 0.3);
+        border-radius: 0.75rem;
+        padding: 0.875rem 1rem;
+        color: #ffffff;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+    }
+
+    .form-input::placeholder {
+        color: rgba(153, 176, 187, 0.6);
+    }
+
+    .form-input:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: var(--helios-orange);
+        box-shadow: 0 0 0 3px rgba(244, 140, 6, 0.15);
+    }
+
+    .form-select {
+        appearance: none;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2399b0bb' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 1rem center;
+        padding-right: 2.5rem;
+    }
+
+    .form-textarea {
+        resize: none;
+        font-family: inherit;
+    }
+
+    .error-message {
+        font-size: 0.8rem;
+        color: var(--highlight);
+        margin-top: 0.25rem;
+    }
+
+    .error-message.show {
+        display: block;
+    }
+
+    .form-input.error {
+        border-color: var(--highlight);
+        background-color: rgba(244, 114, 182, 0.08);
+    }
+
+    .privacy-check {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .privacy-check input[type="checkbox"] {
+        width: 1.25rem;
+        height: 1.25rem;
+        margin-top: 0.25rem;
+        cursor: pointer;
+        accent-color: var(--helios-orange);
+    }
+
+    .privacy-label {
+        font-size: 0.9rem;
+        color: var(--steel-pewter);
+        cursor: pointer;
+        line-height: 1.5;
+    }
+
+    .submit-button {
+        background: linear-gradient(
+            135deg,
+            var(--helios-orange) 0%,
+            #ff6b35 100%
+        );
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .submit-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(244, 140, 6, 0.3);
+    }
+
+    .submit-button:active {
+        transform: translateY(0);
+    }
+
+    .success-alert,
+    .error-alert {
+        border-radius: 0.75rem;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .success-alert {
+        background-color: rgba(52, 211, 153, 0.15);
+        border: 1px solid rgba(52, 211, 153, 0.3);
+        color: #86efac;
+    }
+
+    .error-alert {
+        background-color: rgba(244, 114, 182, 0.15);
+        border: 1px solid rgba(244, 114, 182, 0.3);
+        color: #f472b6;
+    }
+
+    .alert-content {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .alert-icon {
+        width: 1.25rem;
+        height: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    @media (max-width: 1024px) {
+        .contact-container {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .content-title {
+            font-size: 2.5rem;
+        }
+
+        .form-section {
+            padding: 2rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .contact-section-wrapper {
+            padding: 1rem;
+            min-height: auto;
+        }
+
+        .content-inner {
+            padding: 1rem;
+        }
+
+        .content-title {
+            font-size: 2rem;
+        }
+
+        .content-subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-fields {
+            grid-template-columns: 1fr;
+        }
+
+        .form-section {
+            padding: 1.5rem;
+        }
+    }
+</style>
+
+<script is:inline src="/scripts/form-handler.js"></script>
