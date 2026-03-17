@@ -1,5 +1,28 @@
 ---
 // Hero component for Buildr - Construction site style
+export interface Props {
+  title?: string;
+  subtitle?: string;
+  description?: string;
+  buttonText?: string;
+  buttonLink?: string;
+  backgroundImages?: string[];
+}
+
+const {
+  title = "Build. Grow. Dominate.",
+  subtitle = "Your Growth Partner",
+  description = "Over 2,500 contractors and trades professionals have trusted us to elevate their digital presence. Transform your business online and reach more customers than ever before.",
+  buttonText = "VIEW OUR WORK",
+  buttonLink = "#work",
+  backgroundImages = [
+    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop"
+  ]
+} = Astro.props;
 ---
 
 <section class="relative h-screen flex items-center overflow-hidden">
@@ -16,8 +39,8 @@
   <div class="absolute inset-0 opacity-60" style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 80%, var(--steel-pewter) 20%) 100%);"></div>
 
   <!-- Content -->
-  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="space-y-8">
+  <div class="relative z-10 max-w-7xl mx-auto px-8">
+    <div class="space-y-8 text-left -ml-8">
       
       <!-- Small Title -->
       <div class="animate-[fade-in_1s_ease-out]">
@@ -28,13 +51,13 @@
 
       <!-- Main Heading -->
       <div class="space-y-4 animate-[fade-in-up_1s_ease-out]">
-        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight">
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold leading-tight text-left">
           <span class="text-white">Build. </span>
           <span style="color: var(--helios-orange);">Grow. </span>
           <span class="text-white">Dominate.</span>
         </h1>
         
-        <p class="text-lg md:text-xl leading-relaxed max-w-2xl text-white">
+        <p class="text-lg md:text-xl leading-relaxed max-w-2xl text-white text-left">
           Over 2,500 contractors and trades professionals have trusted us to elevate their digital presence. Transform your business online and reach more customers than ever before.
         </p>
       </div>
@@ -42,6 +65,8 @@
       <!-- CTA Button -->
       <div class="pt-4 animate-[fade-in-up_1s_ease-out] opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]">
         <button class="group relative inline-flex items-center justify-between px-6 py-3 text-white text-base font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden" style="background-color: var(--helios-orange); min-width: 200px;">
+          <!-- Hover overlay for swipe effect -->
+          <div class="absolute inset-0 bg-[var(--midnight-navy)] transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-in-out rounded-full"></div>
           <span class="relative z-10 tracking-wide">VIEW OUR WORK</span>
           <div class="relative z-10 w-10 h-10 rounded-full flex items-center justify-center ml-3 transition-all duration-300 group-hover:rotate-45" style="background-color: var(--midnight-navy);">
             <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -64,45 +89,47 @@
 </section>
 
 <script>
-  let currentSlide = 0;
-  const slides = document.querySelectorAll('.slideshow-image');
-  const dots = document.querySelectorAll('.slideshow-dot');
-  const totalSlides = slides.length;
+  document.addEventListener('DOMContentLoaded', function() {
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slideshow-image');
+    const dots = document.querySelectorAll('.slideshow-dot');
+    const totalSlides = slides.length;
 
-  function showSlide(index: number) {
-    // Remove active class from all slides and dots
-    slides.forEach(slide => slide.classList.remove('active', 'opacity-100'));
-    dots.forEach(dot => dot.classList.remove('active'));
-    
-    // Add active class to current slide and dot
-    slides[index].classList.add('active', 'opacity-100');
-    dots[index].classList.add('active');
-    
-    // Update dot styles
-    dots.forEach((dot, i) => {
-      if (i === index) {
-        dot.classList.remove('bg-white/50');
-        dot.classList.add('bg-amber-400');
-      } else {
-        dot.classList.remove('bg-amber-400');
-        dot.classList.add('bg-white/50');
-      }
-    });
-  }
+    function showSlide(index) {
+      // Remove active class from all slides and dots
+      slides.forEach(slide => slide.classList.remove('active', 'opacity-100'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      
+      // Add active class to current slide and dot
+      slides[index].classList.add('active', 'opacity-100');
+      dots[index].classList.add('active');
+      
+      // Update dot styles
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.remove('bg-white/50');
+          dot.classList.add('bg-amber-400');
+        } else {
+          dot.classList.remove('bg-amber-400');
+          dot.classList.add('bg-white/50');
+        }
+      });
+    }
 
-  function nextSlide() {
-    currentSlide = (currentSlide + 1) % totalSlides;
-    showSlide(currentSlide);
-  }
-
-  // Auto-advance slideshow every 5 seconds
-  setInterval(nextSlide, 5000);
-
-  // Manual navigation with dots
-  dots.forEach((dot, index) => {
-    dot.addEventListener('click', () => {
-      currentSlide = index;
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
       showSlide(currentSlide);
+    }
+
+    // Auto-advance slideshow every 5 seconds
+    setInterval(nextSlide, 5000);
+
+    // Manual navigation with dots
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        currentSlide = index;
+        showSlide(currentSlide);
+      });
     });
   });
 </script>
