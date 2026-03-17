@@ -4,6 +4,37 @@ import Button from "../ui/Button.astro";
 // Footer component with 4-column layout
 ---
 
+<!-- Moving Banner Section -->
+<div class="w-full overflow-hidden py-6 relative bg-white">
+  <div class="flex items-center animate-[scroll_8s_linear_infinite] gap-8">
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">PROFESSIONAL WEBSITES</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">HVAC SPECIALISTS</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">PLUMBING EXPERTS</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">DIGITAL MARKETING</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">LOCAL SEO</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">LEAD GENERATION</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <!-- Duplicate for seamless loop -->
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">PROFESSIONAL WEBSITES</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">HVAC SPECIALISTS</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">PLUMBING EXPERTS</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">DIGITAL MARKETING</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: transparent; -webkit-text-stroke: 2px var(--midnight-navy); text-stroke: 2px var(--midnight-navy);">LOCAL SEO</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl font-extrabold font-[Poppins] tracking-wider whitespace-nowrap flex-shrink-0" style="color: var(--midnight-navy);">LEAD GENERATION</div>
+    <div class="text-8xl md:text-7xl sm:text-6xl flex-shrink-0" style="color: var(--helios-orange);">✦</div>
+  </div>
+</div>
+
 <footer class="bg-[#F5F5F5] text-[#0A1931]">
   <div class="container-custom section-padding">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -236,3 +267,14 @@ import Button from "../ui/Button.astro";
     </div>
   </div>
 </div>
+<style>
+  /* Scroll animation for moving banner */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+</style>
