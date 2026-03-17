@@ -30,20 +30,23 @@ import Button from "../ui/Button.astro";
       <div class="hidden lg:flex items-center gap-1 flex-1 justify-center">
         <a
           href="/reviews"
-          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          data-path="/reviews"
         >
           Reviews
         </a>
         <a
           href="/our-work"
-          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          data-path="/our-work"
         >
           Our Work
         </a>
         <div class="relative group">
           <a
             href="/trades-we-serve"
-            class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            data-path="/trades-we-serve"
           >
             Trades We Serve
             <svg
@@ -109,21 +112,24 @@ import Button from "../ui/Button.astro";
         </div>
         <a
           href="/what-we-do"
-          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          data-path="/what-we-do"
         >
           What We Do
         </a>
         <div class="relative group">
           <a
             href="/about"
-            class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            data-path="/about"
           >
             About
           </a>
         </div>
         <a
           href="/contact"
-          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link nav-item font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          data-path="/contact"
         >
           Contact
         </a>
@@ -171,33 +177,33 @@ import Button from "../ui/Button.astro";
     <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-[#99B0BB]">
       <a
         href="/reviews"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >Reviews</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/reviews">Reviews</a
       >
       <a
         href="/our-work"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >Our Work</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/our-work">Our Work</a
       >
       <a
         href="/trades-we-serve"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >Trades We Serve</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/trades-we-serve">Trades We Serve</a
       >
       <a
         href="/what-we-do"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >What We Do</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/what-we-do">What We Do</a
       >
       <a
         href="/about"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >About</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/about">About</a
       >
       <a
         href="/contact"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
-        >Contact</a
+        class="mobile-nav-item font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
+        data-path="/contact">Contact</a
       >
       <div class="px-3 py-2">
         <a
@@ -260,11 +266,51 @@ import Button from "../ui/Button.astro";
   .navbar-scrolled .navbar-link:hover {
     color: var(--helios-orange);
   }
+
+  /* Active link indicator */
+  .nav-item.active {
+    color: var(--helios-orange);
+  }
+
+  .navbar-scrolled .nav-item.active {
+    color: var(--helios-orange);
+  }
+
+  /* Mobile active state */
+  .mobile-nav-item.active {
+    color: var(--helios-orange);
+    background-color: rgba(244, 140, 6, 0.1);
+  }
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const navbar = document.querySelector("nav");
+    const navItems = document.querySelectorAll(".nav-item");
+    const mobileNavItems = document.querySelectorAll(".mobile-nav-item");
+
+    function setActiveLink() {
+      const currentPath = window.location.pathname;
+
+      // Remove active class from all items
+      navItems.forEach((item) => item.classList.remove("active"));
+      mobileNavItems.forEach((item) => item.classList.remove("active"));
+
+      // Add active class to matching item
+      navItems.forEach((item) => {
+        const path = item.getAttribute("data-path");
+        if (currentPath === path || (path === "/" && currentPath === "/")) {
+          item.classList.add("active");
+        }
+      });
+
+      mobileNavItems.forEach((item) => {
+        const path = item.getAttribute("data-path");
+        if (currentPath === path || (path === "/" && currentPath === "/")) {
+          item.classList.add("active");
+        }
+      });
+    }
 
     function handleScroll() {
       if (window.scrollY > 50) {
@@ -277,6 +323,7 @@ import Button from "../ui/Button.astro";
     }
 
     // Initial check
+    setActiveLink();
     handleScroll();
 
     // Listen for scroll events

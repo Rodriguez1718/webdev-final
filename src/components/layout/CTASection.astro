@@ -4,20 +4,38 @@
 import Button from "../ui/Button.astro";
 ---
 
-<section class="py-16 md:py-24 px-4 md:px-6 lg:px-8 bg-parchment">
-    <div class="w-full">
-        <!-- Main Container -->
+<section
+    class="py-20 md:py-32 px-4 md:px-6 lg:px-8 relative overflow-hidden bg-white"
+>
+    <!-- Subtle background pattern -->
+    <div class="absolute inset-0 opacity-5">
         <div
-            class="rounded-2xl p-8 md:p-12 border shadow-2xl"
-            style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%); border-color: rgba(244, 140, 6, 0.3);"
+            class="absolute top-0 right-0 w-96 h-96 bg-[#F48C06] rounded-full blur-3xl"
         >
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-[#0A1931] rounded-full blur-3xl"
+        >
+        </div>
+    </div>
+
+    <div class="w-full relative z-10">
+        <!-- Main Container -->
+        <div class="max-w-6xl mx-auto">
             <!-- Header Section -->
             <div
-                class="flex flex-col md:flex-row md:items-center md:justify-between mb-12 gap-6"
+                class="flex flex-col md:flex-row md:items-center md:justify-between mb-16 gap-8"
             >
                 <div class="flex-1">
-                    <h2 class="heading-primary mb-4">
-                        Ready to Transform Your Business?
+                    <div class="inline-block mb-4">
+                        <span
+                            class="text-[#F48C06] text-sm font-bold uppercase tracking-widest border-l-4 border-[#F48C06] pl-4"
+                        >
+                            Ready to Grow?
+                        </span>
+                    </div>
+                    <h2 class="heading-primary mb-6">
+                        Transform Your Business Today
                     </h2>
                     <p class="text-body text-lg max-w-2xl">
                         Join thousands of contractors and trades professionals
@@ -28,7 +46,7 @@ import Button from "../ui/Button.astro";
 
                 <!-- CTA Button -->
                 <div class="shrink-0">
-                    <Button variant="primary" size="md" href="/contact">
+                    <Button variant="primary" size="lg" href="/contact">
                         Get Started Today
                     </Button>
                 </div>
@@ -36,50 +54,37 @@ import Button from "../ui/Button.astro";
 
             <!-- Features Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Feature Card 1 - Highlighted -->
-                <div
-                    class="rounded-xl p-6 text-white transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: linear-gradient(135deg, var(--button-color) 0%, #144069 100%);"
-                >
+                <!-- Feature Card 1 -->
+                <div class="card">
                     <div
-                        class="flex items-center justify-center w-12 h-12 rounded-lg bg-white/20 mb-4"
+                        class="flex items-center justify-center w-14 h-14 rounded-lg mb-6"
+                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
                     >
                         <svg
-                            class="w-6 h-6"
+                            class="w-7 h-7 text-white"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                         >
                             <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2">Fast Setup</h3>
-                    <p class="text-sm text-white/90">
+                    <h3 class="text-xl font-bold mb-3 text-[#0A1931]">
+                        Fast Setup
+                    </h3>
+                    <p class="text-sm text-[#7E7E7E] leading-relaxed">
                         Get your online presence up and running in minutes, not
                         weeks.
                     </p>
-                    <div class="mt-4">
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            href="#"
-                            class="!bg-transparent !border-2 !border-white !text-white hover:!text-[#F48C06] hover:!border-[#F48C06]"
-                        >
-                            Learn More
-                        </Button>
-                    </div>
                 </div>
 
                 <!-- Feature Card 2 -->
-                <div
-                    class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
-                >
+                <div class="card">
                     <div
-                        class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
-                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%); color: white;"
+                        class="flex items-center justify-center w-14 h-14 rounded-lg mb-6"
+                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
                     >
                         <svg
-                            class="w-6 h-6"
+                            class="w-7 h-7 text-white"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                         >
@@ -88,39 +93,23 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3
-                        class="text-lg font-semibold mb-2"
-                        style="color: var(--midnight-navy);"
-                    >
+                    <h3 class="text-xl font-bold mb-3 text-[#0A1931]">
                         Proven Results
                     </h3>
-                    <p class="text-sm" style="color: var(--machinist);">
+                    <p class="text-sm text-[#7E7E7E] leading-relaxed">
                         See measurable growth in leads and customer inquiries
                         within weeks.
                     </p>
-                    <div class="mt-4">
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            href="#"
-                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
-                        >
-                            Learn More
-                        </Button>
-                    </div>
                 </div>
 
                 <!-- Feature Card 3 -->
-                <div
-                    class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
-                >
+                <div class="card">
                     <div
-                        class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
-                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%); color: white;"
+                        class="flex items-center justify-center w-14 h-14 rounded-lg mb-6"
+                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
                     >
                         <svg
-                            class="w-6 h-6"
+                            class="w-7 h-7 text-white"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                         >
@@ -129,39 +118,23 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3
-                        class="text-lg font-semibold mb-2"
-                        style="color: var(--midnight-navy);"
-                    >
+                    <h3 class="text-xl font-bold mb-3 text-[#0A1931]">
                         Expert Support
                     </h3>
-                    <p class="text-sm" style="color: var(--machinist);">
+                    <p class="text-sm text-[#7E7E7E] leading-relaxed">
                         Our team is here to help you succeed every step of the
                         way.
                     </p>
-                    <div class="mt-4">
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            href="#"
-                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
-                        >
-                            Learn More
-                        </Button>
-                    </div>
                 </div>
 
                 <!-- Feature Card 4 -->
-                <div
-                    class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
-                >
+                <div class="card">
                     <div
-                        class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
-                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%); color: white;"
+                        class="flex items-center justify-center w-14 h-14 rounded-lg mb-6"
+                        style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
                     >
                         <svg
-                            class="w-6 h-6"
+                            class="w-7 h-7 text-white"
                             fill="currentColor"
                             viewBox="0 0 24 24"
                         >
@@ -170,26 +143,13 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3
-                        class="text-lg font-semibold mb-2"
-                        style="color: var(--midnight-navy);"
-                    >
+                    <h3 class="text-xl font-bold mb-3 text-[#0A1931]">
                         24/7 Available
                     </h3>
-                    <p class="text-sm" style="color: var(--machinist);">
+                    <p class="text-sm text-[#7E7E7E] leading-relaxed">
                         Your business works around the clock, so should your
                         online presence.
                     </p>
-                    <div class="mt-4">
-                        <Button
-                            variant="ghost"
-                            size="sm"
-                            href="#"
-                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
-                        >
-                            Learn More
-                        </Button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -198,20 +158,26 @@ import Button from "../ui/Button.astro";
 
 <style>
     .heading-primary {
-        font-size: 2.25rem;
-        font-weight: 700;
+        font-size: 2.5rem;
+        font-weight: 800;
         color: var(--midnight-navy);
         line-height: 1.2;
+        letter-spacing: -0.5px;
     }
 
     .text-body {
         color: var(--machinist);
         line-height: 1.6;
+        font-size: 1.1rem;
     }
 
     @media (max-width: 768px) {
         .heading-primary {
-            font-size: 1.875rem;
+            font-size: 2rem;
+        }
+
+        .text-body {
+            font-size: 1rem;
         }
     }
 </style>
