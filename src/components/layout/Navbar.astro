@@ -4,9 +4,9 @@ import Button from "../ui/Button.astro";
 
 <nav class="bg-[var(--primary-color)] shadow-md sticky top-0 z-50">
   <div class="container-custom">
-    <div class="flex items-center h-20 py-4">
+    <div class="flex items-center justify-between h-20 px-4 lg:px-6">
       <!-- Logo / Home Link -->
-      <div class="">
+      <div class="shrink-0">
         <a
           href="/"
           class="font-primary font-bold text-2xl text-[#0A1931] hover:text-[#F48C06] transition-colors duration-200 flex items-center justify-center"
@@ -14,31 +14,29 @@ import Button from "../ui/Button.astro";
           <img
             src="../../../public/images/logo.png"
             alt=""
-            class="w-[92px] h-[72px] rounded"
+            class="w-15.5 h-15.5 rounded"
           />
         </a>
       </div>
 
       <!-- Desktop Navigation Links -->
-      <div
-        class="hidden lg:flex items-center space-x-2 lg:space-x-4 xl:space-x-8"
-      >
+      <div class="hidden lg:flex items-center gap-1 flex-1 justify-center">
         <a
           href="/reviews"
-          class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200"
+          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Reviews
         </a>
         <a
           href="/our-work"
-          class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200"
+          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Our Work
         </a>
         <div class="relative group">
           <a
             href="/trades-we-serve"
-            class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center"
+            class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
           >
             Trades We Serve
             <svg
@@ -59,10 +57,10 @@ import Button from "../ui/Button.astro";
             <div class="py-2">
               <a
                 href="/trades-we-serve/plumbing"
-                class="flex items-center px-4 py-3 text-[#7E7E7E] hover:text-[var(--secondary-color)] hover:bg-gray-50 transition-colors duration-200"
+                class="flex items-center px-4 py-3 text-[#7E7E7E] hover:text-[#F48C06] hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg
-                  class="w-5 h-5 mr-3 text-[var(--secondary-color)]"
+                  class="w-5 h-5 mr-3 text-[#F48C06]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -81,10 +79,10 @@ import Button from "../ui/Button.astro";
               </a>
               <a
                 href="/trades-we-serve/hvac"
-                class="flex items-center px-4 py-3 text-[#7E7E7E] hover:text-[var(--secondary-color)] hover:bg-gray-50 transition-colors duration-200"
+                class="flex items-center px-4 py-3 text-[#7E7E7E] hover:text-[#F48C06] hover:bg-gray-50 transition-colors duration-200"
               >
                 <svg
-                  class="w-5 h-5 mr-3 text-[var(--secondary-color)]"
+                  class="w-5 h-5 mr-3 text-[#F48C06]"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -104,28 +102,28 @@ import Button from "../ui/Button.astro";
         </div>
         <a
           href="/what-we-do"
-          class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200"
+          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           What We Do
         </a>
         <div class="relative group">
           <a
             href="/about"
-            class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center"
+            class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
           >
             About
           </a>
         </div>
         <a
           href="/contact"
-          class="font-primary text-white hover:text-[var(--secondary-color)] px-3 py-2 text-base font-medium transition-colors duration-200"
+          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Contact
         </a>
       </div>
 
       <!-- CTA Button -->
-      <div class="hidden lg:flex flex-1 justify-center">
+      <div class="hidden lg:flex ml-auto">
         <Button variant="primary" size="md"> Get a Quote </Button>
       </div>
 
