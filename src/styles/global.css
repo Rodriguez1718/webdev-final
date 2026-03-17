@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* Ensure Poppins is loaded and applied globally */
+* {
+  font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+}
+
 /* Global Design Tokens */
 :root {
   /* Core Identity - Brand Colors */
@@ -32,9 +37,9 @@
   --button-hover: var(--steel-pewter);
   
   /* Font Variables */
-  --font-primary: 'Poppins', theme('fontFamily.sans');
-  --font-secondary: theme('fontFamily.serif');
-  --font-mono: theme('fontFamily.mono');
+  --font-primary: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-secondary: ui-serif, Georgia, serif;
+  --font-mono: ui-monospace, 'Courier New', monospace;
 }
 
 /* Global Font Classes */
