@@ -1,0 +1,207 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Button from '../../components/ui/Button.astro';
+
+export async function getStaticPaths() {
+  const templates = await getCollection('templates');
+  return templates.map((template: CollectionEntry<'templates'>) => ({
+    params: { slug: template.id },
+    props: { template },
+  }));
+}
+
+type Props = {
+  template: CollectionEntry<'templates'>;
+};
+
+const { template }: Props = Astro.props;
+const { title, trade, description, thumbnail, liveDemoUrl, mainSiteUrl, category } = template.data;
+---
+
+<BaseLayout title={title} description={description}>
+  <main class="bg-[#F5F5F5] min-h-screen">
+    <!-- Hero Section -->
+    <section class="bg-[#0A1931] text-white py-16">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto text-center">
+          <!-- Breadcrumb -->
+          <nav class="mb-6">
+            <ol class="flex items-center justify-center space-x-2 text-sm text-[#99B0BB]">
+              <li><a href="/" class="hover:text-[#F48C06] transition-colors">Home</a></li>
+              <li class="text-[#99B0BB]">/</li>
+              <li><a href="/templates" class="hover:text-[#F48C06] transition-colors">Templates</a></li>
+              <li class="text-[#99B0BB]">/</li>
+              <li class="text-white">{title}</li>
+            </ol>
+          </nav>
+
+          <!-- Category Badge -->
+          <div class="mb-4">
+            <span class="inline-block bg-[#F48C06] text-white px-4 py-2 rounded-lg text-sm font-semibold font-primary uppercase tracking-wide">
+              {category} • {trade}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="heading-primary text-white mb-6">
+            {title}
+          </h1>
+
+          <!-- Description -->
+          <p class="text-xl text-[#99B0BB] mb-8 leading-relaxed font-primary max-w-3xl mx-auto">
+            {description}
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            {liveDemoUrl && (
+              <Button 
+                href={liveDemoUrl} 
+                variant="primary" 
+                size="lg"
+                class="min-w-[200px]"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                </svg>
+                View Live Demo
+              </Button>
+            )}
+            
+            {mainSiteUrl && (
+              <Button 
+                href={mainSiteUrl} 
+                variant="ghost" 
+                size="lg"
+                class="min-w-[200px] border-2 border-white text-white hover:bg-white hover:text-[#0A1931]"
+              >
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                </svg>
+                Visit Main Site
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Template Preview -->
+    {thumbnail && (
+      <section class="py-16">
+        <div class="container-custom">
+          <div class="max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-xl overflow-hidden border border-[#99B0BB]">
+              <div class="aspect-video bg-gray-100 flex items-center justify-center">
+                <img 
+                  src={thumbnail} 
+                  alt={`${title} preview`}
+                  class="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Content Section -->
+    <section class="py-16">
+      <div class="container-custom">
+        <div class="max-w-4xl mx-auto">
+          <div class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border border-[#99B0BB]">
+            <div class="prose prose-lg max-w-none font-primary">
+              <div class="text-[#0A1931]">
+                <div set:html={template.body} />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="py-16 bg-[#0A1931]">
+      <div class="container-custom">
+        <div class="max-w-3xl mx-auto text-center">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 font-primary">
+            Ready to Use This Template?
+          </h2>
+          <p class="text-xl text-[#99B0BB] mb-8 font-primary">
+            Get started with this {trade.toLowerCase()} template and customize it for your business needs.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              href="/contact" 
+              variant="primary" 
+              size="lg"
+            >
+              Get Started Today
+            </Button>
+            <Button 
+              href="/templates" 
+              variant="ghost"
+              size="lg"
+              class="border-2 border-white text-white hover:bg-white hover:text-[#0A1931]"
+            >
+              Browse More Templates
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #0A1931;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .prose h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #0A1931;
+    margin-bottom: 0.75rem;
+    margin-top: 1.5rem;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .prose p {
+    color: #7E7E7E;
+    line-height: 1.625;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .prose ul, .prose ol {
+    color: #7E7E7E;
+    margin-bottom: 1rem;
+    font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  }
+  
+  .prose li {
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose strong {
+    color: #0A1931;
+    font-weight: 600;
+  }
+  
+  .prose code {
+    background-color: #F5F5F5;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    color: #0A1931;
+    font-size: 0.875rem;
+  }
+</style>
