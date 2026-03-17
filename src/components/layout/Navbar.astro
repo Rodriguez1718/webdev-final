@@ -1,3 +1,7 @@
+---
+import Button from "../ui/Button.astro";
+---
+
 <nav class="bg-[var(--primary-color)] shadow-md sticky top-0 z-50">
   <div class="container-custom">
     <div class="flex items-center h-20 py-4">
@@ -122,12 +126,7 @@
 
       <!-- CTA Button -->
       <div class="hidden lg:flex flex-1 justify-center">
-        <a
-          href="/schedule"
-          class="btn-primary font-primary px-6 py-3 text-base"
-        >
-          Get a Quote
-        </a>
+        <Button variant="primary" size="md"> Get a Quote </Button>
       </div>
 
       <!-- Mobile menu button -->
