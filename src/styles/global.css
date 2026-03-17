@@ -11,6 +11,7 @@
   --midnight-navy: #0A1931;
   --helios-orange: #F48C06;
   --steel-pewter: #99B0BB;
+  --steel-blue: #1B4D7E;
   
   /* UI Surfaces & Text */
   --parchment: #F5F5F5;
@@ -32,6 +33,8 @@
   --text-muted: var(--muted);
   --background: #ffffff;
   --surface: var(--parchment);
+  --button-color: var(--steel-blue);
+  --button-hover: var(--steel-pewter);
   
   /* Font Variables */
   --font-primary: 'Poppins', ui-sans-serif, system-ui, sans-serif;
@@ -104,4 +107,57 @@
 
 .alert-info {
   @apply bg-blue-50 border border-[#22D3EE] text-blue-800 p-4 rounded-lg;
+}
+/* Global Component Classes */
+.btn-primary {
+  @apply bg-[var(--button-color)] hover:bg-[#144069] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-[#0A1931] hover:bg-[#0f1f3a] text-white font-semibold py-2 px-4 rounded-lg transition-colors duration-200;
+}
+
+.btn-outline {
+  @apply border-2 border-[#F48C06] text-[#F48C06] hover:bg-[#F48C06] hover:text-white font-semibold py-2 px-4 rounded-lg transition-all duration-200;
+}
+
+.card {
+  @apply bg-white rounded-lg shadow-md p-6 border border-[#99B0BB];
+}
+
+.card-hover {
+  @apply bg-white rounded-lg shadow-md hover:shadow-lg p-6 border border-[#99B0BB] transition-shadow duration-200;
+}
+
+.heading-primary {
+  @apply text-4xl md:text-5xl font-bold text-[#0A1931] leading-tight;
+}
+
+.heading-secondary {
+  @apply text-2xl md:text-3xl font-semibold text-[#0A1931];
+}
+
+.text-body {
+  @apply text-[#99B0BB] leading-relaxed;
+}
+
+.container-custom {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.section-padding {
+  @apply py-16 md:py-24;
+}
+/* Burger Menu Animation */
+.burger-btn.open .line-top {
+  width: 24px;
+}
+
+.burger-btn.open .line-middle {
+  width: 8px;
+  opacity: 0.35;
+}
+
+.burger-btn.open .line-bottom {
+  width: 24px;
 }
