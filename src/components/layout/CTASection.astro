@@ -4,15 +4,12 @@
 import Button from "../ui/Button.astro";
 ---
 
-<section
-    class="py-16 md:py-24 px-4 md:px-6 lg:px-8"
-    style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 90%, var(--steel-pewter) 10%) 100%);"
->
+<section class="py-16 md:py-24 px-4 md:px-6 lg:px-8 bg-parchment">
     <div class="w-full">
         <!-- Main Container -->
         <div
-            class="rounded-2xl p-8 md:p-12 border"
-            style="background: rgba(255, 255, 255, 0.05); border-color: rgba(244, 140, 6, 0.2); backdrop-filter: blur(10px);"
+            class="rounded-2xl p-8 md:p-12 border shadow-2xl"
+            style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(245, 245, 245, 0.95) 100%); border-color: rgba(244, 140, 6, 0.3);"
         >
             <!-- Header Section -->
             <div
@@ -75,7 +72,7 @@ import Button from "../ui/Button.astro";
                 <!-- Feature Card 2 -->
                 <div
                     class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(244, 140, 6, 0.2);"
+                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
                 >
                     <div
                         class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
@@ -91,10 +88,13 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-white">
+                    <h3
+                        class="text-lg font-semibold mb-2"
+                        style="color: var(--midnight-navy);"
+                    >
                         Proven Results
                     </h3>
-                    <p class="text-sm text-white/80">
+                    <p class="text-sm" style="color: var(--machinist);">
                         See measurable growth in leads and customer inquiries
                         within weeks.
                     </p>
@@ -103,7 +103,7 @@ import Button from "../ui/Button.astro";
                             variant="ghost"
                             size="sm"
                             href="#"
-                            class="!bg-transparent !border-2 !border-white !text-white hover:!text-[#F48C06] hover:!border-[#F48C06]"
+                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
                         >
                             Learn More
                         </Button>
@@ -113,7 +113,7 @@ import Button from "../ui/Button.astro";
                 <!-- Feature Card 3 -->
                 <div
                     class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(244, 140, 6, 0.2);"
+                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
                 >
                     <div
                         class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
@@ -129,10 +129,13 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-white">
+                    <h3
+                        class="text-lg font-semibold mb-2"
+                        style="color: var(--midnight-navy);"
+                    >
                         Expert Support
                     </h3>
-                    <p class="text-sm text-white/80">
+                    <p class="text-sm" style="color: var(--machinist);">
                         Our team is here to help you succeed every step of the
                         way.
                     </p>
@@ -141,7 +144,7 @@ import Button from "../ui/Button.astro";
                             variant="ghost"
                             size="sm"
                             href="#"
-                            class="!bg-transparent !border-2 !border-white !text-white hover:!text-[#F48C06] hover:!border-[#F48C06]"
+                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
                         >
                             Learn More
                         </Button>
@@ -151,7 +154,7 @@ import Button from "../ui/Button.astro";
                 <!-- Feature Card 4 -->
                 <div
                     class="rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:scale-105"
-                    style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(244, 140, 6, 0.2);"
+                    style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.8) 0%, rgba(245, 245, 245, 0.8) 100%); border: 2px solid rgba(244, 140, 6, 0.2);"
                 >
                     <div
                         class="flex items-center justify-center w-12 h-12 rounded-lg mb-4"
@@ -167,10 +170,13 @@ import Button from "../ui/Button.astro";
                             ></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold mb-2 text-white">
+                    <h3
+                        class="text-lg font-semibold mb-2"
+                        style="color: var(--midnight-navy);"
+                    >
                         24/7 Available
                     </h3>
-                    <p class="text-sm text-white/80">
+                    <p class="text-sm" style="color: var(--machinist);">
                         Your business works around the clock, so should your
                         online presence.
                     </p>
@@ -179,7 +185,7 @@ import Button from "../ui/Button.astro";
                             variant="ghost"
                             size="sm"
                             href="#"
-                            class="!bg-transparent !border-2 !border-white !text-white hover:!text-[#F48C06] hover:!border-[#F48C06]"
+                            class="!bg-transparent !border-2 !border-[#99B0BB] !text-[#0A1931] hover:!text-[#F48C06] hover:!border-[#F48C06]"
                         >
                             Learn More
                         </Button>
@@ -194,12 +200,12 @@ import Button from "../ui/Button.astro";
     .heading-primary {
         font-size: 2.25rem;
         font-weight: 700;
-        color: white;
+        color: var(--midnight-navy);
         line-height: 1.2;
     }
 
     .text-body {
-        color: var(--steel-pewter);
+        color: var(--machinist);
         line-height: 1.6;
     }
 
