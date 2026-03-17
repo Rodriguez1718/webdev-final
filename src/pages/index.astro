@@ -4,6 +4,7 @@ import ContactForm from "../components/layout/ContactForm.astro";
 import FAQ from "../components/layout/FAQ.astro";
 import Card from "../components/ui/Card.astro";
 import Hero from "../components/layout/Hero.astro";
+import CTA from "../components/layout/CTASection.astro";
 ---
 
 <BaseLayout>
@@ -15,8 +16,10 @@ import Hero from "../components/layout/Hero.astro";
         </section>
         <!-- FAQ Section -->
         <FAQ />
+
         <section class="flex my-10 mx-10">
             <Card title="This is a sample Card" , img="" />
         </section>
+        <CTA />
     </main>
 </BaseLayout>
