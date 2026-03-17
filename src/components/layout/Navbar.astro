@@ -2,7 +2,9 @@
 import Button from "../ui/Button.astro";
 ---
 
-<nav class="navbar-transparent fixed top-0 w-full z-50 transition-all duration-300">
+<nav
+  class="navbar-transparent fixed top-0 w-full z-50 transition-all duration-300"
+>
   <div class="max-w-7xl mx-auto px-8">
     <div class="flex items-center justify-between h-20">
       <!-- Logo / Home Link -->
@@ -17,7 +19,9 @@ import Button from "../ui/Button.astro";
             class="w-12 h-12 rounded"
           />
           <div>
-            <span class="navbar-logo-build">Build</span><span class="navbar-logo-pro">Pro</span>
+            <span class="navbar-logo-build">Build</span><span
+              class="navbar-logo-pro">Pro</span
+            >
           </div>
         </a>
       </div>
@@ -164,9 +168,7 @@ import Button from "../ui/Button.astro";
     class="mobile-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 lg:hidden"
     id="mobile-menu"
   >
-    <div
-      class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-[#99B0BB]"
-    >
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-[#99B0BB]">
       <a
         href="/reviews"
         class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
@@ -261,23 +263,23 @@ import Button from "../ui/Button.astro";
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const navbar = document.querySelector('nav');
-    
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector("nav");
+
     function handleScroll() {
       if (window.scrollY > 50) {
-        navbar.classList.add('navbar-scrolled');
-        navbar.classList.remove('navbar-transparent');
+        navbar.classList.add("navbar-scrolled");
+        navbar.classList.remove("navbar-transparent");
       } else {
-        navbar.classList.remove('navbar-scrolled');
-        navbar.classList.add('navbar-transparent');
+        navbar.classList.remove("navbar-scrolled");
+        navbar.classList.add("navbar-transparent");
       }
     }
-    
+
     // Initial check
     handleScroll();
-    
+
     // Listen for scroll events
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
   });
 </script>
