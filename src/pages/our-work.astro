@@ -1,102 +1,57 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import Hero2 from "../components/layout/Hero2.astro";
+import Card from "../components/ui/Card.astro";
 ---
 
 <BaseLayout>
     <main>
+        <Hero2
+            eyebrow="OUR PORTFOLIO"
+            headline="Explore Our Work"
+            highlightWord="Work"
+            description="See how we've transformed businesses across the trades industry with innovative digital solutions and proven results."
+            showForm={false}
+        />
         <section
             class="py-20 px-4 md:px-8 lg:px-12"
             style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 90%, var(--steel-pewter) 10%) 100%);"
         >
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-                        Our <span style="color: var(--helios-orange);"
-                            >Work</span
-                        >
-                    </h1>
-                    <p class="text-xl text-steel-pewter max-w-3xl mx-auto">
-                        Explore our portfolio of successful projects and
-                        transformations
-                    </p>
-                </div>
+                <div class="text-center mb-16"></div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <!-- Project Card 1 -->
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:border-orange-500 transition-all duration-300 group"
+                    <Card
+                        title="CoolAir Pro"
+                        description="Complete website redesign with integrated booking system and local SEO optimization."
+                        tags={["Web Design", "SEO"]}
+                        accent="orange"
                     >
-                        <div
-                            class="h-64 bg-gradient-to-br from-blue-600 to-blue-800 flex items-center justify-center"
-                        >
-                            <div class="text-center">
-                                <p class="text-white text-lg font-semibold">
-                                    HVAC Company Website
-                                </p>
-                                <p class="text-white/80 text-sm">
-                                    340% Lead Increase
-                                </p>
-                            </div>
+                        <div class="text-sm font-semibold text-[#F48C06] mb-2">
+                            340% Lead Increase
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-white text-xl font-semibold mb-2">
-                                CoolAir Pro
-                            </h3>
-                            <p class="text-steel-pewter mb-4">
-                                Complete website redesign with integrated
-                                booking system and local SEO optimization.
-                            </p>
-                            <div class="flex gap-2">
-                                <span
-                                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
-                                    >Web Design</span
-                                >
-                                <span
-                                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
-                                    >SEO</span
-                                >
-                            </div>
-                        </div>
-                    </div>
+                        <p class="text-xs text-[#7E7E7E]">
+                            HVAC Company Website
+                        </p>
+                    </Card>
 
-                    <!-- Project Card 2 -->
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl overflow-hidden hover:border-orange-500 transition-all duration-300 group"
+                    <Card
+                        title="Rapid Plumbing Pro"
+                        description="Mobile-optimized website with emergency booking and service area expansion."
+                        tags={["Mobile Design", "Booking System"]}
+                        accent="orange"
                     >
-                        <div
-                            class="h-64 bg-gradient-to-br from-slate-700 to-slate-900 flex items-center justify-center"
-                        >
-                            <div class="text-center">
-                                <p class="text-white text-lg font-semibold">
-                                    Plumbing Services Website
-                                </p>
-                                <p class="text-white/80 text-sm">
-                                    200% Call Volume Increase
-                                </p>
-                            </div>
+                        <div class="text-sm font-semibold text-[#F48C06] mb-2">
+                            200% Call Volume Increase
                         </div>
-                        <div class="p-6">
-                            <h3 class="text-white text-xl font-semibold mb-2">
-                                Rapid Plumbing Pro
-                            </h3>
-                            <p class="text-steel-pewter mb-4">
-                                Mobile-optimized website with emergency booking
-                                and service area expansion.
-                            </p>
-                            <div class="flex gap-2">
-                                <span
-                                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
-                                    >Mobile Design</span
-                                >
-                                <span
-                                    class="px-3 py-1 bg-orange-500/20 text-orange-400 rounded-full text-sm"
-                                    >Booking System</span
-                                >
-                            </div>
-                        </div>
-                    </div>
+                        <p class="text-xs text-[#7E7E7E]">
+                            Plumbing Services Website
+                        </p>
+                    </Card>
                 </div>
             </div>
         </section>
+        <CTASection />
     </main>
 </BaseLayout>
