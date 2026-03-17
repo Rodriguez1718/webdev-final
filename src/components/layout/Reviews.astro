@@ -20,13 +20,16 @@
     <!-- Reviews Carousel -->
     <div class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
-        <!-- Image Section - Fixed -->
+        <!-- Image Section - Fixed with Auto Carousel -->
         <div class="relative h-80 md:h-auto overflow-hidden p-4 flex items-center justify-center bg-white">
-          <img 
-            src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop" 
-            alt="HVAC and plumbing work" 
-            class="w-full h-full object-cover rounded-2xl"
-          />
+          <div class="relative w-full h-full">
+            <img 
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop" 
+              alt="HVAC and plumbing work" 
+              class="image-carousel w-full h-full object-cover rounded-2xl transition-opacity duration-500 ease-in-out opacity-100"
+              data-image="0"
+            />
+          </div>
         </div>
 
         <!-- Content Section - Carousel -->
@@ -280,15 +283,31 @@
     const prevBtnInner = document.querySelectorAll('.carousel-prev-inner');
     const nextBtnInner = document.querySelectorAll('.carousel-next-inner');
     const reviewsContainer = document.querySelector('.reviews-container') as HTMLElement | null;
+    const images = document.querySelectorAll('.image-carousel');
     
     let currentSlide = 0;
     const totalSlides = reviewSlides.length;
+    let currentImageIndex = 0;
+    const totalImages = images.length;
     let autoSlideInterval: ReturnType<typeof setInterval> | null = null;
+    let autoImageInterval: ReturnType<typeof setInterval> | null = null;
     
     function updateCarousel() {
       if (!reviewsTrack) return;
       const translateX = -currentSlide * 100;
       (reviewsTrack as HTMLElement).style.transform = `translateX(${translateX}%)`;
+    }
+    
+    function updateImages() {
+      images.forEach((img, index) => {
+        if (index === currentImageIndex) {
+          img.classList.remove('opacity-0');
+          img.classList.add('opacity-100');
+        } else {
+          img.classList.remove('opacity-100');
+          img.classList.add('opacity-0');
+        }
+      });
     }
     
     function nextSlide() {
@@ -301,8 +320,17 @@
       updateCarousel();
     }
     
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % totalImages;
+      updateImages();
+    }
+    
     function startAutoSlide() {
       autoSlideInterval = setInterval(nextSlide, 6000);
+    }
+    
+    function startAutoImages() {
+      autoImageInterval = setInterval(nextImage, 5000);
     }
     
     function stopAutoSlide() {
@@ -336,6 +364,8 @@
     
     // Initialize
     updateCarousel();
+    updateImages();
     startAutoSlide();
+    startAutoImages();
   });
 </script>
