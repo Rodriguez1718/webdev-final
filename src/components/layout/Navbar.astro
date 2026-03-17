@@ -1,0 +1,86 @@
+<nav class="bg-white shadow-md sticky top-0 z-50">
+  <div class="container-custom">
+    <div class="flex items-center h-20 py-4">
+
+      <!-- Logo / Home Link -->
+      <div class="flex-1">
+        <a href="/" class="font-primary font-bold text-2xl text-[#0A1931] hover:text-[#F48C06] transition-colors duration-200 flex items-center justify-center">
+          <span class="text-[#0A1931]">Logo</span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation Links -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="/reviews" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200">
+          Reviews
+        </a>
+        <a href="/our-work" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200">
+          Our Work
+        </a>
+        <div class="relative group">
+          <a href="/trades-we-serve" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center">
+            Trades We Serve
+            <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+        <a href="/what-we-do" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200">
+          What We Do
+        </a>
+        <div class="relative group">
+          <a href="/about" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200 flex items-center">
+            About
+            <svg class="ml-1 h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+            </svg>
+          </a>
+        </div>
+        <a href="/contact" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] px-3 py-2 text-base font-medium transition-colors duration-200">
+          Contact
+        </a>
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden lg:flex flex-1 justify-center">
+        <a href="/schedule" class="btn-primary font-primary px-6 py-3 text-base">
+          Get a Quote
+        </a>
+      </div>
+
+      <!-- Mobile menu button -->
+      <div class="lg:hidden ml-auto">
+        <button 
+          type="button" 
+          class="burger-btn bg-transparent border-none cursor-pointer p-3 flex flex-col gap-1 items-center rounded-lg transition-colors duration-150 hover:bg-[#0A1931]/8 text-[#99B0BB] hover:text-[#0A1931] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#F48C06]"
+          id="burgerBtn"
+          aria-controls="mobile-menu" 
+          aria-expanded="false"
+          aria-label="Toggle menu"
+        >
+          <div class="line line-top h-0.5 rounded-sm bg-current transition-all duration-300 ease-out w-3.5"></div>
+          <div class="line line-middle h-0.5 rounded-sm bg-current transition-all duration-300 ease-out w-6"></div>
+          <div class="line line-bottom h-0.5 rounded-sm bg-current transition-all duration-300 ease-out w-3.5"></div>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Mobile menu with smooth slide animation -->
+  <div class="mobile-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 lg:hidden" id="mobile-menu">
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-[#F5F5F5] border-t border-[#99B0BB]">
+      <a href="/reviews" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">Reviews</a>
+      <a href="/our-work" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">Our Work</a>
+      <a href="/trades-we-serve" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">Trades We Serve</a>
+      <a href="/what-we-do" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">What We Do</a>
+      <a href="/about" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">About</a>
+      <a href="/contact" class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200">Contact</a>
+      <div class="px-3 py-2">
+        <a href="/schedule" class="btn-primary font-primary w-full text-center block">Schedule a Call with Us</a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script src="/src/scripts/script.js"></script>
