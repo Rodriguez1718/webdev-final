@@ -22,7 +22,7 @@
         <!-- Main Image -->
         <div class="relative overflow-hidden">
           <div class="rounded-3xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop" alt="Professional contractor team working on construction project" class="w-full h-80 object-cover" />
+            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="Professional construction team working on building project" class="w-full h-80 object-cover" />
           </div>
           <!-- Swipe reveal overlay -->
           <div class="absolute top-0 left-0 w-full h-full bg-[var(--parchment)] z-10 animate-[swipeReveal_1.2s_ease-out_0.3s_forwards]"></div>
@@ -63,7 +63,7 @@
         </div>
         <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="2500" data-suffix="+">2500<span class="text-[var(--helios-orange)] text-5xl ml-1 transition-colors duration-400 group-hover:text-white">+</span></div>
+          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="2500" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
           <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Projects Completed</div>
         </div>
       </div>
@@ -80,7 +80,7 @@
         </div>
         <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="8" data-suffix="+">8<span class="text-[var(--helios-orange)] text-5xl ml-1 transition-colors duration-400 group-hover:text-white">+</span></div>
+          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="8" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
           <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Years Experience</div>
         </div>
       </div>
@@ -97,7 +97,7 @@
         </div>
         <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="450" data-suffix="+">450<span class="text-[var(--helios-orange)] text-5xl ml-1 transition-colors duration-400 group-hover:text-white">+</span></div>
+          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="450" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
           <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Happy Clients</div>
         </div>
       </div>
@@ -114,12 +114,14 @@
         </div>
         <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="285" data-suffix="%">285<span class="text-[var(--helios-orange)] text-5xl ml-1 transition-colors duration-400 group-hover:text-white">%</span></div>
+          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="285" data-suffix="%">0<span class="text-white text-5xl ml-1 transition-colors duration-400">%</span></div>
           <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Average Growth</div>
         </div>
       </div>
     </div>
   </div>
+
+
 </section>
 
 <style>
@@ -130,6 +132,26 @@
     }
     to {
       transform: translateX(100%);
+    }
+  }
+  
+  /* Scroll animation for moving banner */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Scroll animation for moving banner */
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
     }
   }
   
@@ -188,7 +210,7 @@
         if (start < target) {
           const currentValue = Math.floor(start).toLocaleString();
           if (suffix.includes('+') || suffix.includes('%')) {
-            element.innerHTML = currentValue + '<span class="stat-plus-new">' + suffix + '</span>';
+            element.innerHTML = currentValue + '<span class="text-white text-5xl ml-1 transition-colors duration-400">' + suffix + '</span>';
           } else {
             element.textContent = currentValue + suffix;
           }
@@ -196,7 +218,7 @@
         } else {
           const finalValue = target.toLocaleString();
           if (suffix.includes('+') || suffix.includes('%')) {
-            element.innerHTML = finalValue + '<span class="stat-plus-new">' + suffix + '</span>';
+            element.innerHTML = finalValue + '<span class="text-white text-5xl ml-1 transition-colors duration-400">' + suffix + '</span>';
           } else {
             element.textContent = finalValue + suffix;
           }
@@ -232,9 +254,9 @@
     });
     
     // Observe the stats section
-    const statsSection = document.querySelector('[data-target]');
+    const statsSection = document.querySelector('.bg-parchment');
     if (statsSection) {
-      observer.observe(statsSection.parentElement!);
+      observer.observe(statsSection);
     }
   });
 </script>
