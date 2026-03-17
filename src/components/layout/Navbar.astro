@@ -2,20 +2,27 @@
 import Button from "../ui/Button.astro";
 ---
 
-<nav class="bg-[var(--primary-color)] shadow-md sticky top-0 z-50">
-  <div class="container-custom">
-    <div class="flex items-center justify-between h-20 px-4 lg:px-6">
+<nav
+  class="navbar-transparent fixed top-0 w-full z-50 transition-all duration-300"
+>
+  <div class="max-w-7xl mx-auto px-8">
+    <div class="flex items-center justify-between h-20">
       <!-- Logo / Home Link -->
       <div class="shrink-0">
         <a
           href="/"
-          class="font-primary font-bold text-2xl text-[#0A1931] hover:text-[#F48C06] transition-colors duration-200 flex items-center justify-center"
+          class="font-primary font-bold text-2xl navbar-logo transition-colors duration-200 flex items-center gap-3"
         >
           <img
             src="/images/logo.png"
-            alt=""
-            class="w-15.5 h-15.5 rounded"
+            alt="BuildPro Logo"
+            class="w-12 h-12 rounded"
           />
+          <div>
+            <span class="navbar-logo-build">Build</span><span
+              class="navbar-logo-pro">Pro</span
+            >
+          </div>
         </a>
       </div>
 
@@ -23,20 +30,20 @@ import Button from "../ui/Button.astro";
       <div class="hidden lg:flex items-center gap-1 flex-1 justify-center">
         <a
           href="/reviews"
-          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Reviews
         </a>
         <a
           href="/our-work"
-          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Our Work
         </a>
         <div class="relative group">
           <a
             href="/trades-we-serve"
-            class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
           >
             Trades We Serve
             <svg
@@ -102,21 +109,21 @@ import Button from "../ui/Button.astro";
         </div>
         <a
           href="/what-we-do"
-          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           What We Do
         </a>
         <div class="relative group">
           <a
             href="/about"
-            class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
+            class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 flex items-center whitespace-nowrap"
           >
             About
           </a>
         </div>
         <a
           href="/contact"
-          class="font-primary text-white hover:text-[#F48C06] px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
+          class="navbar-link font-primary px-3 py-2 text-sm font-medium transition-colors duration-200 whitespace-nowrap"
         >
           Contact
         </a>
@@ -133,7 +140,7 @@ import Button from "../ui/Button.astro";
       <div class="lg:hidden ml-auto">
         <button
           type="button"
-          class="burger-btn bg-transparent border-none cursor-pointer p-3 flex flex-col gap-1 items-center rounded-lg transition-colors duration-150 hover:bg-white/10 text-white hover:text-[var(--secondary-color)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#F48C06]"
+          class="burger-btn bg-transparent border-none cursor-pointer p-3 flex flex-col gap-1 items-center rounded-lg transition-colors duration-150 hover:bg-white/10 navbar-link focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[#F48C06]"
           id="burgerBtn"
           aria-controls="mobile-menu"
           aria-expanded="false"
@@ -161,37 +168,35 @@ import Button from "../ui/Button.astro";
     class="mobile-menu overflow-hidden transition-all duration-300 ease-in-out max-h-0 lg:hidden"
     id="mobile-menu"
   >
-    <div
-      class="px-2 pt-2 pb-3 space-y-1 bg-[#F5F5F5] border-t border-[#99B0BB]"
-    >
+    <div class="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-[#99B0BB]">
       <a
         href="/reviews"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >Reviews</a
       >
       <a
         href="/our-work"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >Our Work</a
       >
       <a
         href="/trades-we-serve"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >Trades We Serve</a
       >
       <a
         href="/what-we-do"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >What We Do</a
       >
       <a
         href="/about"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >About</a
       >
       <a
         href="/contact"
-        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-white block px-3 py-2 text-base font-medium transition-colors duration-200"
+        class="font-primary text-[#7E7E7E] hover:text-[#0A1931] hover:bg-gray-50 block px-3 py-2 text-base font-medium transition-colors duration-200"
         >Contact</a
       >
       <div class="px-3 py-2">
@@ -206,3 +211,75 @@ import Button from "../ui/Button.astro";
 </nav>
 
 <script src="/src/scripts/script.js"></script>
+
+<style>
+  /* Transparent navbar styles */
+  .navbar-transparent {
+    background: transparent;
+    backdrop-filter: none;
+  }
+
+  .navbar-scrolled {
+    background: white;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Logo colors */
+  .navbar-logo-build {
+    color: white;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-logo-pro {
+    color: var(--helios-orange);
+    transition: color 0.3s ease;
+  }
+
+  .navbar-scrolled .navbar-logo-build {
+    color: var(--midnight-navy);
+  }
+
+  .navbar-scrolled .navbar-logo-pro {
+    color: var(--helios-orange);
+  }
+
+  /* Navigation link colors */
+  .navbar-link {
+    color: white;
+  }
+
+  .navbar-link:hover {
+    color: var(--helios-orange);
+  }
+
+  .navbar-scrolled .navbar-link {
+    color: var(--midnight-navy);
+  }
+
+  .navbar-scrolled .navbar-link:hover {
+    color: var(--helios-orange);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const navbar = document.querySelector("nav");
+
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        navbar.classList.add("navbar-scrolled");
+        navbar.classList.remove("navbar-transparent");
+      } else {
+        navbar.classList.remove("navbar-scrolled");
+        navbar.classList.add("navbar-transparent");
+      }
+    }
+
+    // Initial check
+    handleScroll();
+
+    // Listen for scroll events
+    window.addEventListener("scroll", handleScroll);
+  });
+</script>
