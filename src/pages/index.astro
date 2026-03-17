@@ -6,22 +6,15 @@ import Card from "../components/ui/Card.astro";
 import Hero from "../components/layout/Hero.astro";
 import TrustBanner from "../components/layout/TrustBanner.astro";
 import CTA from "../components/layout/CTASection.astro";
+import Reviews from "../components/layout/Reviews.astro";
 ---
 
 <BaseLayout>
     <main>
         <Hero />
         <TrustBanner />
-        <!-- Contact Form Section -->
-        <section class="py-16 px-6 md:px-12 lg:px-20 bg-white">
-            <ContactForm />
-        </section>
-        <!-- FAQ Section -->
+        <Reviews />
         <FAQ />
-
-        <section class="flex my-10 mx-10">
-            <Card title="This is a sample Card" , img="" />
-        </section>
         <CTA />
     </main>
 </BaseLayout>
