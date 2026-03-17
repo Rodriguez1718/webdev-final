@@ -1,25 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import CTASection from "../components/layout/CTASection.astro";
+import FAQ from "../components/layout/FAQ.astro";
+import Hero2 from "../components/layout/Hero2.astro";
 ---
 
 <BaseLayout>
     <main>
+        <Hero2
+            eyebrow="INDUSTRY SOLUTIONS"
+            headline="Trades We Serve"
+            highlightWord="Serve"
+            description="Specialized digital solutions tailored for every trade and service industry. From plumbing to HVAC, we've got your business covered."
+            showForm={false}
+        />
         <section
             class="py-20 px-4 md:px-8 lg:px-12"
             style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 90%, var(--steel-pewter) 10%) 100%);"
         >
             <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-                        Trades We <span style="color: var(--helios-orange);"
-                            >Serve</span
-                        >
-                    </h1>
-                    <p class="text-xl text-steel-pewter max-w-3xl mx-auto">
-                        Specialized solutions for every trade and service
-                        industry
-                    </p>
-                </div>
+                <div class="text-center mb-16"></div>
 
                 <div
                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -186,5 +186,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 </div>
             </div>
         </section>
+        <FAQ />
+        <CTASection />
     </main>
 </BaseLayout>
