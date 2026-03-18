@@ -3,6 +3,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import CTASection from "../components/layout/CTASection.astro";
 import FAQ from "../components/layout/FAQ.astro";
 import Hero2 from "../components/layout/Hero2.astro";
+import Statistics from "../components/layout/Statistics.astro";
+import Values from "../components/layout/Values.astro";
+import Approach from "../components/layout/Approach.astro";
 ---
 
 <BaseLayout>
@@ -14,159 +17,10 @@ import Hero2 from "../components/layout/Hero2.astro";
             description="We're passionate about empowering contractors and trades professionals with digital solutions that drive real business growth and lasting success."
             showForm={true}
         />
-        <section
-            class="py-20 px-4 md:px-8 lg:px-12"
-            style="background: linear-gradient(135deg, var(--midnight-navy) 0%, color-mix(in srgb, var(--midnight-navy) 90%, var(--steel-pewter) 10%) 100%);"
-        >
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16"></div>
+        <Statistics />
+        <Approach />
+        <Values />
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-                    <div>
-                        <h2 class="text-3xl font-bold text-white mb-6">
-                            Our Mission
-                        </h2>
-                        <p
-                            class="text-steel-pewter text-lg leading-relaxed mb-6"
-                        >
-                            We believe every contractor deserves a professional
-                            online presence that generates leads and builds
-                            trust. Our mission is to empower trades
-                            professionals with digital tools that transform
-                            their businesses.
-                        </p>
-                        <p class="text-steel-pewter text-lg leading-relaxed">
-                            Since our founding, we've helped over 2,500
-                            contractors and trades professionals elevate their
-                            digital presence and grow their revenue.
-                        </p>
-                    </div>
-
-                    <div
-                        class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-8"
-                    >
-                        <h3 class="text-2xl font-bold text-white mb-8">
-                            By The Numbers
-                        </h3>
-                        <div class="space-y-6">
-                            <div>
-                                <p
-                                    class="text-4xl font-bold"
-                                    style="color: var(--helios-orange);"
-                                >
-                                    2,500+
-                                </p>
-                                <p class="text-steel-pewter">
-                                    Contractors Served
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    class="text-4xl font-bold"
-                                    style="color: var(--helios-orange);"
-                                >
-                                    $50M+
-                                </p>
-                                <p class="text-steel-pewter">
-                                    Revenue Generated for Clients
-                                </p>
-                            </div>
-                            <div>
-                                <p
-                                    class="text-4xl font-bold"
-                                    style="color: var(--helios-orange);"
-                                >
-                                    98%
-                                </p>
-                                <p class="text-steel-pewter">
-                                    Client Satisfaction Rate
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div
-                    class="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl p-12"
-                >
-                    <h2 class="text-3xl font-bold text-white mb-8 text-center">
-                        Our Values
-                    </h2>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center mx-auto"
-                                style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">
-                                Excellence
-                            </h3>
-                            <p class="text-steel-pewter">
-                                We deliver exceptional results that exceed
-                                expectations
-                            </p>
-                        </div>
-
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center mx-auto"
-                                style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">
-                                Integrity
-                            </h3>
-                            <p class="text-steel-pewter">
-                                We're transparent and honest in all our dealings
-                            </p>
-                        </div>
-
-                        <div class="text-center">
-                            <div
-                                class="w-16 h-16 rounded-lg mb-4 flex items-center justify-center mx-auto"
-                                style="background: linear-gradient(135deg, var(--helios-orange) 0%, #ff6b35 100%);"
-                            >
-                                <svg
-                                    class="w-8 h-8 text-white"
-                                    fill="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"
-                                    ></path>
-                                </svg>
-                            </div>
-                            <h3 class="text-xl font-bold text-white mb-2">
-                                Partnership
-                            </h3>
-                            <p class="text-steel-pewter">
-                                Your success is our success, and we're committed
-                                to it
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
         <FAQ />
         <CTASection />
     </main>

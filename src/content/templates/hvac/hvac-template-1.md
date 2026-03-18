@@ -1,10 +1,10 @@
 ---
-title: "HVAC Maintenance Service Page"
+title: "Premium HVAC Services"
 trade: "HVAC"
-description: "Professional HVAC maintenance service template with seasonal scheduling and preventive care focus."
-thumbnail: "/src/assets/templates/web2.png"
-liveDemoUrl: "https://ntv-template-2.vercel.app/"
-mainSiteUrl: "https://ntv-template-2.vercel.app/"
+description: "A specialized landing page for heating and cooling services, featuring seasonal promotion sections and maintenance plan highlights."
+thumbnail: "/src/assets/templates/hvac1.png"
+liveDemoUrl: "https://hvac-template-1-seven.vercel.app/"
+mainSiteUrl: "https://hvac-template-1-seven.vercel.app/"
 category: "Service Page"
 ---
 

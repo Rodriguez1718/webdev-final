@@ -1,22 +1,25 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import ContactForm from "../components/layout/ContactForm.astro";
 import FAQ from "../components/layout/FAQ.astro";
-import Card from "../components/ui/Card.astro";
 import Hero from "../components/layout/Hero.astro";
-import TrustBanner from "../components/layout/TrustBanner.astro";
-import CTA from "../components/layout/CTASection.astro";
+import CoreSteps from "../components/layout/CoreSteps.astro";
+import CTASection from "../components/layout/CTASection.astro";
 import Reviews from "../components/layout/Reviews.astro";
 import Trades from "../components/layout/Trades.astro";
+import Statistics from "../components/layout/Statistics.astro";
+import OurWork from "../components/layout/OurWork.astro";
+import CallBanner from "../components/layout/CallBanner.astro";
 ---
 
 <BaseLayout>
     <main>
         <Hero />
-        <TrustBanner />
+        <Statistics />
         <Reviews />
         <Trades />
+        <CallBanner />
+        <OurWork />
         <FAQ />
-        <CTA />
+        <CTASection />
     </main>
 </BaseLayout>

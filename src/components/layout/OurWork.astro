@@ -1,0 +1,171 @@
+---
+// Our Work Section - Combined HVAC & Plumbing Templates
+import { getCollection } from "astro:content";
+import Button from "../ui/Button.astro";
+import TemplateCard from "../ui/TemplateCard.astro";
+
+// Get all templates and filter by trade
+const allTemplates = await getCollection("templates");
+const hvacTemplates = allTemplates.filter(
+    (template) => template.data.trade.toLowerCase() === "hvac",
+);
+const plumbingTemplates = allTemplates.filter(
+    (template) => template.data.trade.toLowerCase() === "plumbing",
+);
+---
+
+<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-parchment">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+                Our <span style="color: var(--helios-orange);">Works</span>
+            </h2>
+            <p class="text-lg text-[#7E7E7E] max-w-3xl mx-auto">
+                Explore our portfolio of professional websites designed for HVAC
+                and plumbing contractors.
+            </p>
+        </div>
+
+        <!-- HVAC Section -->
+        <div class="mb-20">
+            <div class="mb-8">
+                <h3 class="text-3xl md:text-4xl font-bold text-[#0A1931] mb-3">
+                    <span style="color: var(--midnight-navy);">HVAC</span> Templates
+                </h3>
+                <p class="text-base text-[#7E7E7E]">
+                    Professional website designs tailored for HVAC contractors.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {
+                    hvacTemplates.length > 0 ? (
+                        hvacTemplates
+                            .slice(0, 3)
+                            .map((template) => (
+                                <TemplateCard
+                                    href="/trades-we-serve/hvac"
+                                    imageSrc={
+                                        template.data.thumbnail ||
+                                        "/images/web1.png"
+                                    }
+                                    imageAlt={template.data.title}
+                                    title="View HVAC Templates"
+                                    description="Explore all HVAC designs →"
+                                    trade="hvac"
+                                />
+                            ))
+                    ) : (
+                        <>
+                            <TemplateCard
+                                href="/trades-we-serve/hvac"
+                                imageSrc="/images/web1.png"
+                                imageAlt="HVAC Website Template 1"
+                                title="View HVAC Templates"
+                                description="Explore all HVAC designs →"
+                                trade="hvac"
+                            />
+                            <TemplateCard
+                                href="/trades-we-serve/hvac"
+                                imageSrc="/images/web2.png"
+                                imageAlt="HVAC Website Template 2"
+                                title="View HVAC Templates"
+                                description="Explore all HVAC designs →"
+                                trade="hvac"
+                            />
+                            <TemplateCard
+                                href="/trades-we-serve/hvac"
+                                imageSrc="/images/web1.png"
+                                imageAlt="HVAC Website Template 3"
+                                title="View HVAC Templates"
+                                description="Explore all HVAC designs →"
+                                trade="hvac"
+                            />
+                        </>
+                    )
+                }
+            </div>
+        </div>
+
+        <!-- Plumbing Section -->
+        <div>
+            <div class="mb-8">
+                <h3 class="text-3xl md:text-4xl font-bold text-[#0A1931] mb-3">
+                    <span style="color: var(--helios-orange);">Plumbing</span> Templates
+                </h3>
+                <p class="text-base text-[#7E7E7E]">
+                    Custom website solutions designed for plumbing businesses.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                {
+                    plumbingTemplates.length > 0 ? (
+                        plumbingTemplates
+                            .slice(0, 3)
+                            .map((template) => (
+                                <TemplateCard
+                                    href="/trades-we-serve/plumbing"
+                                    imageSrc={
+                                        template.data.thumbnail ||
+                                        "/images/web2.png"
+                                    }
+                                    imageAlt={template.data.title}
+                                    title="View Plumbing Templates"
+                                    description="Explore all plumbing designs →"
+                                    trade="plumbing"
+                                />
+                            ))
+                    ) : (
+                        <>
+                            <TemplateCard
+                                href="/trades-we-serve/plumbing"
+                                imageSrc="/images/web2.png"
+                                imageAlt="Plumbing Website Template 1"
+                                title="View Plumbing Templates"
+                                description="Explore all plumbing designs →"
+                                trade="plumbing"
+                            />
+                            <TemplateCard
+                                href="/trades-we-serve/plumbing"
+                                imageSrc="/images/web1.png"
+                                imageAlt="Plumbing Website Template 2"
+                                title="View Plumbing Templates"
+                                description="Explore all plumbing designs →"
+                                trade="plumbing"
+                            />
+                            <TemplateCard
+                                href="/trades-we-serve/plumbing"
+                                imageSrc="/images/web2.png"
+                                imageAlt="Plumbing Website Template 3"
+                                title="View Plumbing Templates"
+                                description="Explore all plumbing designs →"
+                                trade="plumbing"
+                            />
+                        </>
+                    )
+                }
+            </div>
+        </div>
+
+        <!-- View All Button -->
+        <div class="text-center mt-16">
+            <Button href="/our-work" variant="primary" size="lg">
+                View All Projects
+                <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </Button>
+        </div>
+    </div>
+</section>

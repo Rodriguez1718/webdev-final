@@ -1,0 +1,199 @@
+---
+// Approach Component - Showcases the company's methodology and process
+import Badge from "../ui/Badge.astro";
+import Button from "../ui/Button.astro";
+
+export interface Props {
+    title?: string;
+    highlightWord?: string;
+    description?: string;
+}
+
+const {
+    title = "Our Approach",
+    highlightWord = "Approach",
+    description = "We combine industry expertise with cutting-edge technology to deliver solutions that transform your business.",
+} = Astro.props;
+
+const titleParts = title.split(highlightWord);
+---
+
+<section
+    class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0A1931] to-[#1a2a4a]"
+>
+    <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <Badge text="HOW WE WORK" variant="orange" />
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                {titleParts[0]}
+                <span class="text-[#F48C06]">{highlightWord}</span>
+                {titleParts[1]}
+            </h2>
+            <p class="text-lg text-[#99B0BB] max-w-3xl mx-auto">
+                {description}
+            </p>
+        </div>
+
+        <!-- Two Column Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <!-- Left: Image/Visual -->
+            <div class="relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img
+                        src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070&auto=format&fit=crop"
+                        alt="Team collaboration"
+                        class="w-full h-[500px] object-cover"
+                    />
+                    <div
+                        class="absolute inset-0 bg-gradient-to-t from-[#0A1931]/80 to-transparent"
+                    >
+                    </div>
+                </div>
+
+                <!-- Floating stat card -->
+                <div
+                    class="absolute -bottom-6 -right-6 bg-white rounded-xl shadow-xl p-6 max-w-xs"
+                >
+                    <div class="flex items-center gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full bg-[#F48C06]/10 flex items-center justify-center"
+                        >
+                            <svg
+                                class="w-6 h-6 text-[#F48C06]"
+                                fill="currentColor"
+                                viewBox="0 0 20 20"
+                            >
+                                <path
+                                    d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"
+                                ></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-[#0A1931]">
+                                50+
+                            </div>
+                            <div class="text-sm text-[#7E7E7E]">
+                                Expert Team Members
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Content -->
+            <div class="space-y-8">
+                <!-- Approach Item 1 -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#F48C06]/10 flex items-center justify-center"
+                        >
+                            <span class="text-xl font-bold text-[#F48C06]"
+                                >01</span
+                            >
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Deep Industry Understanding
+                        </h3>
+                        <p class="text-[#99B0BB] leading-relaxed">
+                            We specialize exclusively in contractor and trades
+                            businesses, understanding your unique challenges and
+                            opportunities better than anyone else.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Approach Item 2 -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#F48C06]/10 flex items-center justify-center"
+                        >
+                            <span class="text-xl font-bold text-[#F48C06]"
+                                >02</span
+                            >
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Data-Driven Strategy
+                        </h3>
+                        <p class="text-[#99B0BB] leading-relaxed">
+                            Every decision is backed by analytics and market
+                            research, ensuring your investment delivers
+                            measurable ROI and sustainable growth.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Approach Item 3 -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#F48C06]/10 flex items-center justify-center"
+                        >
+                            <span class="text-xl font-bold text-[#F48C06]"
+                                >03</span
+                            >
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Continuous Optimization
+                        </h3>
+                        <p class="text-[#99B0BB] leading-relaxed">
+                            We don't just launch and leave. Our team
+                            continuously monitors, tests, and optimizes your
+                            digital presence for peak performance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Approach Item 4 -->
+                <div class="flex gap-4">
+                    <div class="flex-shrink-0">
+                        <div
+                            class="w-12 h-12 rounded-lg bg-[#F48C06]/10 flex items-center justify-center"
+                        >
+                            <span class="text-xl font-bold text-[#F48C06]"
+                                >04</span
+                            >
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2">
+                            Partnership Mindset
+                        </h3>
+                        <p class="text-[#99B0BB] leading-relaxed">
+                            Your success is our success. We build long-term
+                            relationships based on trust, transparency, and
+                            shared goals.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="pt-4">
+                    <Button href="/contact" variant="primary" size="lg">
+                        Start Your Journey
+                        <svg
+                            class="w-5 h-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </Button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
