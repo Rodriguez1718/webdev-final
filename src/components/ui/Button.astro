@@ -1,7 +1,7 @@
 ---
 interface Props {
-  variant?: 'primary' | 'secondary' | 'ghost' | 'danger';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "secondary" | "ghost" | "danger";
+  size?: "sm" | "md" | "lg";
   customPadding?: string;
   customTextSize?: string;
   href?: string;
@@ -11,14 +11,14 @@ interface Props {
 }
 
 const {
-  variant = 'primary',
-  size = 'md',
+  variant = "primary",
+  size = "md",
   customPadding,
   customTextSize,
   href,
   disabled = false,
   fullWidth = false,
-  class: className = '',
+  class: className = "",
 } = Astro.props;
 
 const baseClasses = `
@@ -29,36 +29,49 @@ const baseClasses = `
 `;
 
 const variantClasses = {
-  primary:   'bg-gradient-to-br from-[var(--helios-orange)] to-[#ff6b35] text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(244,140,6,0.3)] active:translate-y-0',
-  secondary: 'bg-[#0A1931] text-white hover:bg-[#0f1f3a] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(10,25,49,0.3)] active:translate-y-0',
-  ghost:     'bg-transparent border-2 border-[#99B0BB] text-[#7E7E7E] hover:text-[#0A1931] hover:border-[#0A1931] hover:-translate-y-0.5 active:translate-y-0',
-  danger:    'bg-gradient-to-br from-red-600 to-red-700 text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(220,38,38,0.3)] active:translate-y-0',
+  primary:
+    "bg-gradient-to-br from-[var(--helios-orange)] to-[#ff6b35] text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(244,140,6,0.3)] active:translate-y-0",
+  secondary:
+    "bg-[#0A1931] text-white hover:bg-[#0f1f3a] hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(10,25,49,0.3)] active:translate-y-0",
+  ghost:
+    "bg-transparent border-2 border-[#99B0BB] text-[#7E7E7E] hover:text-[#0A1931] hover:border-[#0A1931] hover:-translate-y-0.5 active:translate-y-0",
+  danger:
+    "bg-gradient-to-br from-red-600 to-red-700 text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(220,38,38,0.3)] active:translate-y-0",
 };
 
 const sizeClasses = {
-  sm: 'px-6 py-3 text-sm',
-  md: 'px-8 py-4 text-base',
-  lg: 'px-10 py-5 text-lg',
+  sm: "px-6 py-3 text-sm",
+  md: "px-8 py-4 text-base",
+  lg: "px-10 py-5 text-lg",
 };
 
 // Use custom sizes if provided, otherwise use preset sizes
-const paddingClass = customPadding || sizeClasses[size].split(' ').slice(0, 2).join(' ');
-const textSizeClass = customTextSize || sizeClasses[size].split(' ')[2];
+const paddingClass =
+  customPadding || sizeClasses[size].split(" ").slice(0, 2).join(" ");
+const textSizeClass = customTextSize || sizeClasses[size].split(" ")[2];
 
-const widthClass = fullWidth ? 'w-full' : '';
+const widthClass = fullWidth ? "w-full" : "";
 
-const allClasses = [baseClasses, variantClasses[variant], paddingClass, textSizeClass, widthClass, className]
-  .join(' ')
-  .replace(/\s+/g, ' ')
+const allClasses = [
+  baseClasses,
+  variantClasses[variant],
+  paddingClass,
+  textSizeClass,
+  widthClass,
+  className,
+]
+  .join(" ")
+  .replace(/\s+/g, " ")
   .trim();
 
-const Tag = href ? 'a' : 'button';
+const Tag = href ? "a" : "button";
 ---
 
 <Tag
-    href={href}
-    disabled={!href ? disabled : undefined}
-    aria-disabled={disabled}
-    class={allClasses}>
-    <slot/>
+  href={href}
+  disabled={!href ? disabled : undefined}
+  aria-disabled={disabled}
+  class={allClasses}
+>
+  <slot />
 </Tag>

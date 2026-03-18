@@ -16,11 +16,11 @@ const {
   buttonText = "VIEW OUR WORK",
   buttonLink = "#work",
   backgroundImages = [
-    "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1635274531661-1c5a7e0f3a6f?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop",
   ],
 } = Astro.props;
 ---
@@ -30,27 +30,27 @@ const {
   <div class="absolute inset-0">
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image active"
-      style="background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+      style="background-image: url('https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
     >
     </div>
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
-      style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+      style="background-image: url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
     >
     </div>
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
-      style="background-image: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+      style="background-image: url('https://images.unsplash.com/photo-1635274531661-1c5a7e0f3a6f?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
     >
     </div>
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
-      style="background-image: url('https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+      style="background-image: url('https://images.unsplash.com/photo-1585704032915-c3400ca199e7?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
     >
     </div>
     <div
       class="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-[1500ms] ease-in-out slideshow-image"
-      style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
+      style="background-image: url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=2070&auto=format&fit=crop'); filter: brightness(0.6);"
     >
     </div>
   </div>
@@ -98,7 +98,8 @@ const {
       <div
         class="pt-4 animate-[fade-in-up_1s_ease-out] opacity-0 [animation-delay:0.5s] [animation-fill-mode:forwards]"
       >
-        <button
+        <a
+          href="#work"
           class="group relative inline-flex items-center justify-between px-6 py-3 text-white text-base font-bold rounded-full transition-all duration-300 transform hover:scale-105 shadow-2xl overflow-hidden"
           style="background-color: var(--helios-orange); min-width: 200px;"
         >
@@ -125,7 +126,7 @@ const {
                 d="M7 17L17 7M17 7H7M17 7V17"></path>
             </svg>
           </div>
-        </button>
+        </a>
       </div>
     </div>
   </div>

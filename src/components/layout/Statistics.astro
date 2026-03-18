@@ -1,17 +1,19 @@
 ---
 // Enhanced Stats Section with Vision & Mission
+import Badge from "../ui/Badge.astro";
 ---
 
 <section class="bg-parchment py-20 relative overflow-hidden">
   <div class="max-w-7xl mx-auto px-8 relative z-10">
     <!-- Section Header -->
     <div class="mb-16">
-      <div class="inline-block px-4 py-2 rounded-full text-sm font-semibold tracking-wider uppercase mb-6" style="background: color-mix(in srgb, var(--helios-orange) 10%, transparent); color: var(--helios-orange);">
-        WHO WE ARE
-      </div>
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-color mb-8 leading-tight">
-        The Leading Website Design <br>
-        Company For <span style="color: var(--helios-orange);">Contractors</span>
+      <Badge text="WHO WE ARE" variant="orange" />
+      <h2
+        class="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-color mb-8 leading-tight"
+      >
+        The Leading Website Design <br />
+        Company For <span style="color: var(--helios-orange);">Contractors</span
+        >
       </h2>
     </div>
 
@@ -22,10 +24,17 @@
         <!-- Main Image -->
         <div class="relative overflow-hidden">
           <div class="rounded-3xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" alt="Professional construction team working on building project" class="w-full h-80 object-cover" />
+            <img
+              src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop"
+              alt="Professional construction team working on building project"
+              class="w-full h-80 object-cover"
+            />
           </div>
           <!-- Swipe reveal overlay -->
-          <div class="absolute top-0 left-0 w-full h-full bg-[var(--parchment)] z-10 animate-[swipeReveal_1.2s_ease-out_0.3s_forwards]"></div>
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-[var(--parchment)] z-10 animate-[swipeReveal_1.2s_ease-out_0.3s_forwards]"
+          >
+          </div>
         </div>
       </div>
 
@@ -33,17 +42,31 @@
       <div class="space-y-12">
         <!-- Vision Section -->
         <div>
-          <h3 class="text-2xl font-bold mb-4" style="color: var(--midnight-navy);">Our Vision</h3>
+          <h3
+            class="text-2xl font-bold mb-4"
+            style="color: var(--midnight-navy);"
+          >
+            Our Vision
+          </h3>
           <p class="text-lg leading-relaxed text-machinist">
-            To empower contractors with cutting-edge web solutions that enhance their digital presence and drive sustainable business growth in the competitive home services market.
+            To empower contractors with cutting-edge web solutions that enhance
+            their digital presence and drive sustainable business growth in the
+            competitive home services market.
           </p>
         </div>
 
         <!-- Mission Section -->
         <div>
-          <h3 class="text-2xl font-bold mb-4" style="color: var(--midnight-navy);">Our Mission</h3>
+          <h3
+            class="text-2xl font-bold mb-4"
+            style="color: var(--midnight-navy);"
+          >
+            Our Mission
+          </h3>
           <p class="text-lg leading-relaxed text-machinist">
-            Our solutions are designed to meet the unique needs of HVAC and plumbing contractors, ensuring they thrive in today's competitive online landscape through proven digital strategies.
+            Our solutions are designed to meet the unique needs of HVAC and
+            plumbing contractors, ensuring they thrive in today's competitive
+            online landscape through proven digital strategies.
           </p>
         </div>
       </div>
@@ -52,76 +75,201 @@
     <!-- Stats Cards Row -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
       <!-- Projects Completed -->
-      <div class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]">
+      <div
+        class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]"
+      >
         <div class="flex justify-between items-start mb-8 flex-1">
-          <h4 class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400">Digital Excellence</h4>
-          <div class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105">
-            <svg class="w-12 h-12 text-white stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+          <h4
+            class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400"
+          >
+            Digital Excellence
+          </h4>
+          <div
+            class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105"
+          >
+            <svg
+              class="w-12 h-12 text-white stroke-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              ></path>
             </svg>
           </div>
         </div>
-        <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
+        <div
+          class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"
+        >
+        </div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="2500" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
-          <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Projects Completed</div>
+          <div
+            class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400"
+            data-target="2500"
+            data-suffix="+"
+          >
+            0<span
+              class="text-white text-5xl ml-1 transition-colors duration-400"
+              >+</span>
+          </div>
+          <div
+            class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white"
+          >
+            Projects Completed
+          </div>
         </div>
       </div>
 
       <!-- Years Experience -->
-      <div class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]">
+      <div
+        class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]"
+      >
         <div class="flex justify-between items-start mb-8 flex-1">
-          <h4 class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400">Industry Expertise</h4>
-          <div class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105">
-            <svg class="w-12 h-12 text-white stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
+          <h4
+            class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400"
+          >
+            Industry Expertise
+          </h4>
+          <div
+            class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105"
+          >
+            <svg
+              class="w-12 h-12 text-white stroke-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
+              ></path>
             </svg>
           </div>
         </div>
-        <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
+        <div
+          class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"
+        >
+        </div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="8" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
-          <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Years Experience</div>
+          <div
+            class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400"
+            data-target="8"
+            data-suffix="+"
+          >
+            0<span
+              class="text-white text-5xl ml-1 transition-colors duration-400"
+              >+</span>
+          </div>
+          <div
+            class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white"
+          >
+            Years Experience
+          </div>
         </div>
       </div>
 
       <!-- Happy Clients -->
-      <div class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]">
+      <div
+        class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]"
+      >
         <div class="flex justify-between items-start mb-8 flex-1">
-          <h4 class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400">Client Success</h4>
-          <div class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105">
-            <svg class="w-12 h-12 text-white stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          <h4
+            class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400"
+          >
+            Client Success
+          </h4>
+          <div
+            class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105"
+          >
+            <svg
+              class="w-12 h-12 text-white stroke-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+              ></path>
             </svg>
           </div>
         </div>
-        <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
+        <div
+          class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"
+        >
+        </div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="450" data-suffix="+">0<span class="text-white text-5xl ml-1 transition-colors duration-400">+</span></div>
-          <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Happy Clients</div>
+          <div
+            class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400"
+            data-target="450"
+            data-suffix="+"
+          >
+            0<span
+              class="text-white text-5xl ml-1 transition-colors duration-400"
+              >+</span>
+          </div>
+          <div
+            class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white"
+          >
+            Happy Clients
+          </div>
         </div>
       </div>
 
       <!-- Average Growth -->
-      <div class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]">
+      <div
+        class="bg-[var(--midnight-navy)] hover:bg-[var(--helios-orange)] p-8 rounded-3xl transition-all duration-400 relative overflow-hidden border border-white/10 min-h-[280px] flex flex-col group hover:shadow-[0_15px_35px_rgba(244,140,6,0.3)]"
+      >
         <div class="flex justify-between items-start mb-8 flex-1">
-          <h4 class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400">Growth Results</h4>
-          <div class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105">
-            <svg class="w-12 h-12 text-white stroke-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+          <h4
+            class="text-white text-xl font-semibold leading-tight max-w-[60%] transition-colors duration-400"
+          >
+            Growth Results
+          </h4>
+          <div
+            class="text-[var(--steel-pewter)] opacity-60 transition-all duration-400 group-hover:text-white group-hover:opacity-100 group-hover:scale-105"
+          >
+            <svg
+              class="w-12 h-12 text-white stroke-1"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
             </svg>
           </div>
         </div>
-        <div class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"></div>
+        <div
+          class="h-px bg-[var(--steel-pewter)] mb-8 w-full opacity-30 transition-all duration-400 group-hover:bg-white group-hover:opacity-50"
+        >
+        </div>
         <div class="mt-auto">
-          <div class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400" data-target="285" data-suffix="%">0<span class="text-white text-5xl ml-1 transition-colors duration-400">%</span></div>
-          <div class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white">Average Growth</div>
+          <div
+            class="text-6xl font-extrabold text-white leading-none mb-2 flex items-baseline transition-colors duration-400"
+            data-target="285"
+            data-suffix="%"
+          >
+            0<span
+              class="text-white text-5xl ml-1 transition-colors duration-400"
+              >%</span>
+          </div>
+          <div
+            class="text-[var(--steel-pewter)] text-base font-medium leading-tight transition-colors duration-400 group-hover:text-white"
+          >
+            Average Growth
+          </div>
         </div>
       </div>
     </div>
   </div>
-
-
 </section>
 
 <style>
@@ -134,7 +282,7 @@
       transform: translateX(100%);
     }
   }
-  
+
   /* Scroll animation for moving banner */
   @keyframes scroll {
     0% {
@@ -144,7 +292,7 @@
       transform: translateX(-50%);
     }
   }
-  
+
   /* Scroll animation for moving banner */
   @keyframes scroll {
     0% {
@@ -154,43 +302,43 @@
       transform: translateX(-50%);
     }
   }
-  
+
   @media (max-width: 1024px) {
     .grid {
       gap: 3rem;
     }
   }
-  
+
   @media (max-width: 768px) {
     .min-h-\[280px\] {
       min-height: 240px;
     }
-    
+
     .text-6xl {
       font-size: 3rem;
     }
-    
+
     .text-5xl {
       font-size: 2.25rem;
     }
-    
+
     .w-12 {
       width: 2.5rem;
     }
-    
+
     .h-12 {
       height: 2.5rem;
     }
-    
+
     .text-xl {
       font-size: 1.125rem;
     }
-    
+
     .max-w-\[60\%\] {
       max-width: 70%;
     }
   }
-  
+
   @media (max-width: 640px) {
     .min-h-\[280px\] {
       min-height: 200px;
@@ -199,62 +347,78 @@
 </style>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener("DOMContentLoaded", function () {
     // Counter animation function
-    function animateCounter(element: HTMLElement, target: number, suffix: string, duration: number) {
+    function animateCounter(
+      element: HTMLElement,
+      target: number,
+      suffix: string,
+      duration: number,
+    ) {
       let start = 0;
       const increment = target / (duration / 16);
-      
+
       function updateCounter() {
         start += increment;
         if (start < target) {
           const currentValue = Math.floor(start).toLocaleString();
-          if (suffix.includes('+') || suffix.includes('%')) {
-            element.innerHTML = currentValue + '<span class="text-white text-5xl ml-1 transition-colors duration-400">' + suffix + '</span>';
+          if (suffix.includes("+") || suffix.includes("%")) {
+            element.innerHTML =
+              currentValue +
+              '<span class="text-white text-5xl ml-1 transition-colors duration-400">' +
+              suffix +
+              "</span>";
           } else {
             element.textContent = currentValue + suffix;
           }
           requestAnimationFrame(updateCounter);
         } else {
           const finalValue = target.toLocaleString();
-          if (suffix.includes('+') || suffix.includes('%')) {
-            element.innerHTML = finalValue + '<span class="text-white text-5xl ml-1 transition-colors duration-400">' + suffix + '</span>';
+          if (suffix.includes("+") || suffix.includes("%")) {
+            element.innerHTML =
+              finalValue +
+              '<span class="text-white text-5xl ml-1 transition-colors duration-400">' +
+              suffix +
+              "</span>";
           } else {
             element.textContent = finalValue + suffix;
           }
         }
       }
-      
+
       updateCounter();
     }
-    
+
     // Intersection Observer for counter animation
-    const observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.isIntersecting) {
-          const counters = entry.target.querySelectorAll('[data-target]');
-          
-          counters.forEach(function(counter) {
-            const targetAttr = counter.getAttribute('data-target');
-            const suffixAttr = counter.getAttribute('data-suffix');
-            
-            if (targetAttr && !counter.classList.contains('animated')) {
-              const target = parseInt(targetAttr, 10);
-              const suffix = suffixAttr || '';
-              
-              counter.classList.add('animated');
-              animateCounter(counter as HTMLElement, target, suffix, 2000);
-            }
-          });
-        }
-      });
-    }, {
-      threshold: 0.3,
-      rootMargin: '0px 0px -50px 0px'
-    });
-    
+    const observer = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            const counters = entry.target.querySelectorAll("[data-target]");
+
+            counters.forEach(function (counter) {
+              const targetAttr = counter.getAttribute("data-target");
+              const suffixAttr = counter.getAttribute("data-suffix");
+
+              if (targetAttr && !counter.classList.contains("animated")) {
+                const target = parseInt(targetAttr, 10);
+                const suffix = suffixAttr || "";
+
+                counter.classList.add("animated");
+                animateCounter(counter as HTMLElement, target, suffix, 2000);
+              }
+            });
+          }
+        });
+      },
+      {
+        threshold: 0.3,
+        rootMargin: "0px 0px -50px 0px",
+      },
+    );
+
     // Observe the stats section
-    const statsSection = document.querySelector('.bg-parchment');
+    const statsSection = document.querySelector(".bg-parchment");
     if (statsSection) {
       observer.observe(statsSection);
     }
