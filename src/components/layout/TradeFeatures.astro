@@ -7,7 +7,10 @@ export interface Props {
     backLink?: string;
     title: string;
     subtitle?: string;
-    benefits: string[];
+    benefits: Array<{
+        title: string;
+        description: string;
+    }>;
     solutionsTitle: string;
     solutions: Array<{
         title: string;
@@ -30,13 +33,18 @@ const accentColor = trade === "hvac" ? "#0A1931" : "#F48C06";
 const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
 ---
 
-<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white">
-    <div class="max-w-7xl mx-auto">
+<section class="relative py-20 md:py-32 px-4 md:px-6 lg:px-8 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#F5F5F5] via-white to-[#F8FAFC]"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#F48C06]/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-[#0A1931]/5 rounded-full blur-3xl"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto">
         <!-- Back Link -->
         <div class="mb-12">
             <a
                 href={backLink}
-                class="inline-flex items-center gap-2 text-[#7E7E7E] hover:text-[#0A1931] transition-all duration-300 text-base group"
+                class="inline-flex items-center gap-3 text-[#7E7E7E] hover:text-[#F48C06] transition-all duration-300 text-base group bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-[#99B0BB]/20 hover:border-[#F48C06]/30 hover:shadow-lg"
             >
                 <svg
                     class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1"
@@ -55,22 +63,25 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
         </div>
 
         <!-- Section Header -->
-        <div class="text-center mb-16">
-            <div class="inline-block mb-4">
-                <Badge text={badgeText} />
+        <div class="text-center mb-20">
+            <div class="inline-block mb-6">
+                <div class="relative">
+                    <Badge text={badgeText} />
+                    
+                </div>
             </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1931] mb-8 leading-tight">
                 {title}
+                <div class="w-24 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
             </h2>
             {
                 subtitle && (
-                    <p class="text-lg md:text-xl text-[#7E7E7E] max-w-4xl mx-auto">
+                    <p class="text-xl md:text-2xl text-[#7E7E7E] max-w-4xl mx-auto leading-relaxed">
                         {subtitle}{" "}
                         <span
-                            class="font-semibold"
-                            style={`color: ${accentColor};`}
+                            class="font-bold text-[#F48C06]"
                         >
-                            Contractor Gorilla
+                            Build Pro
                         </span>
                         .
                     </p>
@@ -79,76 +90,53 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
         </div>
 
         <!-- Benefits Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {
-                benefits.map((benefit) => (
-                    <div class="flex items-start gap-4 p-6 bg-white rounded-xl border border-[#99B0BB]/20 hover:border-[#99B0BB]/40 transition-all duration-300 hover:shadow-lg">
-                        <div
-                            class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
-                            style={`background-color: ${accentColor}15;`}
-                        >
-                            <svg
-                                class="w-6 h-6"
-                                style={`color: ${accentColor};`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"
-                                />
-                            </svg>
-                        </div>
-                        <p class="text-base text-[#0A1931] font-medium leading-relaxed">
-                            {benefit}
-                        </p>
-                    </div>
-                ))
-            }
-        </div>
-
-        <!-- Solutions Section -->
-        <div>
-            <h3
-                class="text-3xl md:text-4xl font-bold text-[#0A1931] mb-12 text-center"
-            >
-                {solutionsTitle}
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {
-                    solutions.map((solution) => (
-                        <div class="group p-8 bg-gradient-to-br from-white to-[#F5F5F5] rounded-2xl border border-[#99B0BB]/20 hover:border-[#99B0BB]/40 transition-all duration-300 hover:shadow-xl">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-                                style={`background-color: ${accentColor};`}
-                            >
-                                <svg
-                                    class="w-7 h-7 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
-                                >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                                    />
-                                </svg>
+                    benefits.map((benefit, index) => (
+                        <div class="group relative">
+                            <!-- Main Card -->
+                            <div class="relative bg-white rounded-3xl p-8 border border-[#99B0BB]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden">
+                                <!-- Decorative gradient overlay -->
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#F48C06]/10 to-transparent rounded-bl-full"></div>
+                                
+                                <!-- Icon -->
+                                <div class="relative mb-6">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                                        style={`background: linear-gradient(135deg, ${accentColor}, ${accentColor}DD);`}
+                                    >
+                                        <svg
+                                            class="w-7 h-7 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2.5"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Content -->
+                                <div class="relative">
+                                    <h4 class="text-xl font-bold text-[#0A1931] mb-3 group-hover:text-[#F48C06] transition-colors duration-300">
+                                        {benefit.title}
+                                    </h4>
+                                    <p class="text-base text-[#7E7E7E] leading-relaxed">
+                                        {benefit.description}
+                                    </p>
+                                </div>
                             </div>
-                            <h4 class="text-xl md:text-2xl font-bold text-[#0A1931] mb-3">
-                                {solution.title}
-                            </h4>
-                            <p class="text-base text-[#7E7E7E] leading-relaxed">
-                                {solution.description}
-                            </p>
                         </div>
                     ))
                 }
             </div>
         </div>
+
     </div>
 </section>
