@@ -1,0 +1,136 @@
+---
+// Template Gallery Component - Displays templates filtered by trade
+import { getCollection } from "astro:content";
+import Button from "../ui/Button.astro";
+
+export interface Props {
+    trade: "hvac" | "plumbing";
+}
+
+const { trade } = Astro.props;
+
+// Get all templates and filter by trade
+const allTemplates = await getCollection("templates");
+const tradeTemplates = allTemplates.filter(
+    (template) => template.data.trade.toLowerCase() === trade.toLowerCase(),
+);
+
+// Set colors based on trade
+const accentColor = trade === "hvac" ? "#0A1931" : "#F48C06";
+const tradeName = trade === "hvac" ? "HVAC" : "Plumbing";
+---
+
+<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-parchment">
+    <div class="max-w-7xl mx-auto">
+        <!-- Section Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+                {tradeName}
+                <span style={`color: ${accentColor};`}>Website Templates</span>
+            </h2>
+            <p class="text-lg md:text-xl text-[#7E7E7E] max-w-3xl mx-auto">
+                Professional, conversion-optimized templates designed
+                specifically for {tradeName.toLowerCase()} contractors and service
+                providers.
+            </p>
+        </div>
+
+        <!-- Templates Grid -->
+        {
+            tradeTemplates.length > 0 ? (
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                    {tradeTemplates.map((template) => (
+                        <div class="group bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-[#99B0BB]/10 overflow-hidden">
+                            {/* Template Image */}
+                            <div class="relative h-64 overflow-hidden bg-gray-100">
+                                <img
+                                    src={template.data.thumbnail}
+                                    alt={template.data.title}
+                                    class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                                />
+                                {/* Category Badge */}
+                                <div class="absolute top-4 left-4">
+                                    <span
+                                        class="inline-block px-3 py-1 text-xs font-semibold rounded-full backdrop-blur-sm"
+                                        style={`background-color: ${accentColor}; color: white;`}
+                                    >
+                                        {template.data.category ||
+                                            "Landing Page"}
+                                    </span>
+                                </div>
+                            </div>
+
+                            {/* Template Info */}
+                            <div class="p-6">
+                                {/* Title */}
+                                <h3 class="text-xl md:text-2xl font-bold text-[#0A1931] mb-3">
+                                    {template.data.title}
+                                </h3>
+
+                                {/* Description */}
+                                <p class="text-[#7E7E7E] text-base leading-relaxed mb-6">
+                                    {template.data.description}
+                                </p>
+
+                                {/* Live Demo Button */}
+                                {template.data.liveDemoUrl && (
+                                    <a
+                                        href={template.data.liveDemoUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center justify-center gap-2 w-full px-6 py-3 font-semibold rounded-xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg text-base"
+                                        style={`background-color: ${accentColor}; color: ${trade === "hvac" ? "white" : "black"};`}
+                                    >
+                                        <svg
+                                            class="w-5 h-5"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                                            />
+                                        </svg>
+                                        View Live Demo
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            ) : (
+                <div class="text-center py-12">
+                    <p class="text-xl text-[#7E7E7E]">
+                        No templates available yet. Check back soon!
+                    </p>
+                </div>
+            )
+        }
+
+        <!-- CTA Button -->
+        <div class="text-center">
+            <Button
+                href="/contact"
+                variant={trade === "hvac" ? "secondary" : "primary"}
+                size="lg"
+            >
+                Get Your Custom {tradeName} Website
+                <svg
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                >
+                    <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </Button>
+        </div>
+    </div>
+</section>
