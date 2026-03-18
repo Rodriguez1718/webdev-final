@@ -5,6 +5,9 @@ import Button from '../ui/Button.astro';
 export interface Props {
   eyebrow?: string;
   headline?: string;
+  backLink?: string;
+  backText?: string;
+  showBackLink?: boolean;
   highlightWord?: string;
   description?: string;
   formTitle?: string;
@@ -17,6 +20,9 @@ export interface Props {
 const { 
   eyebrow = "YOUR GROWTH PARTNER",
   headline = "Build. Grow. Dominate.",
+  backLink = "/trades-we-serve",
+  backText = "Back to Trades",
+  showBackLink = false,
   highlightWord = "Grow",
   description = "Over 2,500 contractors and trades professionals have trusted us to elevate their digital presence. Transform your business online and reach more customers than ever before.",
   formTitle = "Get Your Free Quote Today",
@@ -43,31 +49,57 @@ const headlineParts = headline.split(highlightWord);
   <div class="relative z-10 w-full py-16 px-6 md:px-12 lg:px-20">
     <div class="max-w-7xl mx-auto">
       
+      
       {variant === 'split' ? (
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <!-- Left Content -->
-          <div class="space-y-8">
-            <!-- Eyebrow -->
-            <div class="inline-block">
-              <span class="text-[#F48C06] text-sm font-bold font-primary uppercase tracking-widest border-l-4 border-[#F48C06] pl-4">
-                {eyebrow}
-              </span>
+          <div>   
+            <!-- Back Link - Top of Section -->
+            {showBackLink && backLink && (
+              <div class="mb-12">
+                <a
+                  href={backLink}
+                  class="inline-flex items-center gap-3 text-white/80 hover:text-[#F48C06] transition-all duration-300 text-base group bg-[#0A1931]/60 backdrop-blur-md px-6 py-3 rounded-full border border-[#F48C06]/20 hover:border-[#F48C06]/60 hover:shadow-lg hover:shadow-[#F48C06]/20 hover:bg-[#0A1931]/80"
+                >
+                  <svg
+                    class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M15 19l-7-7 7-7"></path>
+                  </svg>
+                  {backText}
+                </a>
+              </div>
+            )}         
+            <div class="space-y-8">
+              <!-- Eyebrow -->
+              <div class="inline-block">
+                <span class="text-[#F48C06] text-sm font-bold font-primary uppercase tracking-widest border-l-4 border-[#F48C06] pl-4">
+                  {eyebrow}
+                </span>
+              </div>
+              
+              <!-- Dynamic Headline -->
+              <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-primary leading-tight text-white">
+                {headlineParts[0]}
+                <span class="text-[#F48C06] relative">
+                  {highlightWord}
+                  <div class="absolute -bottom-2 left-0 w-full h-1 bg-[#F48C06] rounded-full"></div>
+                </span>
+                {headlineParts[1]}
+              </h1>
+              
+              <!-- Description -->
+              <p class="text-lg md:text-xl leading-relaxed font-primary text-[#99B0BB] max-w-2xl">
+                {description}
+              </p>
             </div>
-            
-            <!-- Dynamic Headline -->
-            <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold font-primary leading-tight text-white">
-              {headlineParts[0]}
-              <span class="text-[#F48C06] relative">
-                {highlightWord}
-                <div class="absolute -bottom-2 left-0 w-full h-1 bg-[#F48C06] rounded-full"></div>
-              </span>
-              {headlineParts[1]}
-            </h1>
-            
-            <!-- Description -->
-            <p class="text-lg md:text-xl leading-relaxed font-primary text-[#99B0BB] max-w-2xl">
-              {description}
-            </p>
           </div>
 
           <!-- Right Form -->
