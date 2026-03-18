@@ -1,10 +1,10 @@
 ---
-title: "Emergency Pipe Repair Landing Page"
+title: "Modern Residential Plumbing"
 trade: "Plumbing"
-description: "A high-conversion landing page template designed for emergency plumbing services with a focus on mobile-first design."
-thumbnail: "/src/assets/templates/web1.png"
-liveDemoUrl: "https://hvac-plumbing-pros.com"
-mainSiteUrl: "https://hvac-plumbing-pros.com"
+description: "A clean, conversion-optimized landing page for residential plumbing services featuring a clear service breakdown and booking CTA."
+thumbnail: "/src/assets/templates/plumbing1.png"
+liveDemoUrl: "https://plumbing-template-1-beta.vercel.app/"
+mainSiteUrl: "https://plumbing-template-1-beta.vercel.app/"
 category: "Landing Page"
 ---
 
