@@ -44,7 +44,12 @@ const tradeName = trade === "hvac" ? "HVAC" : "Plumbing";
                             {/* Template Image */}
                             <div class="relative h-64 overflow-hidden bg-gray-100">
                                 <img
-                                    src={template.data.thumbnail}
+                                    src={
+                                        template.data.thumbnail ||
+                                        (trade === "hvac"
+                                            ? "/images/hvac1.png"
+                                            : "/images/plumbing1.png")
+                                    }
                                     alt={template.data.title}
                                     class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
                                 />
