@@ -30,13 +30,18 @@ const accentColor = trade === "hvac" ? "#0A1931" : "#F48C06";
 const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
 ---
 
-<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-white">
-    <div class="max-w-7xl mx-auto">
+<section class="relative py-20 md:py-32 px-4 md:px-6 lg:px-8 overflow-hidden">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#F5F5F5] via-white to-[#F8FAFC]"></div>
+    <div class="absolute top-0 right-0 w-96 h-96 bg-[#F48C06]/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-[#0A1931]/5 rounded-full blur-3xl"></div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto">
         <!-- Back Link -->
         <div class="mb-12">
             <a
                 href={backLink}
-                class="inline-flex items-center gap-2 text-[#7E7E7E] hover:text-[#0A1931] transition-all duration-300 text-base group"
+                class="inline-flex items-center gap-3 text-[#7E7E7E] hover:text-[#F48C06] transition-all duration-300 text-base group bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-[#99B0BB]/20 hover:border-[#F48C06]/30 hover:shadow-lg"
             >
                 <svg
                     class="w-5 h-5 transition-transform duration-300 group-hover:-translate-x-1"
@@ -55,22 +60,25 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
         </div>
 
         <!-- Section Header -->
-        <div class="text-center mb-16">
-            <div class="inline-block mb-4">
-                <Badge text={badgeText} />
+        <div class="text-center mb-20">
+            <div class="inline-block mb-6">
+                <div class="relative">
+                    <Badge text={badgeText} />
+                    <div class="absolute -inset-2 bg-gradient-to-r from-[#F48C06]/20 to-[#0A1931]/20 rounded-full blur-xl -z-10"></div>
+                </div>
             </div>
-            <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A1931] mb-8 leading-tight">
                 {title}
+                <div class="w-24 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
             </h2>
             {
                 subtitle && (
-                    <p class="text-lg md:text-xl text-[#7E7E7E] max-w-4xl mx-auto">
+                    <p class="text-xl md:text-2xl text-[#7E7E7E] max-w-4xl mx-auto leading-relaxed">
                         {subtitle}{" "}
                         <span
-                            class="font-semibold"
-                            style={`color: ${accentColor};`}
+                            class="font-bold bg-gradient-to-r from-[#F48C06] to-[#0A1931] bg-clip-text text-transparent"
                         >
-                            Contractor Gorilla
+                            Build Pro
                         </span>
                         .
                     </p>
@@ -79,76 +87,329 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
         </div>
 
         <!-- Benefits Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
-            {
-                benefits.map((benefit) => (
-                    <div class="flex items-start gap-4 p-6 bg-white rounded-xl border border-[#99B0BB]/20 hover:border-[#99B0BB]/40 transition-all duration-300 hover:shadow-lg">
-                        <div
-                            class="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center"
-                            style={`background-color: ${accentColor}15;`}
-                        >
-                            <svg
-                                class="w-6 h-6"
-                                style={`color: ${accentColor};`}
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    stroke-width="2"
-                                    d="M5 13l4 4L19 7"
-                                />
-                            </svg>
-                        </div>
-                        <p class="text-base text-[#0A1931] font-medium leading-relaxed">
-                            {benefit}
-                        </p>
-                    </div>
-                ))
-            }
-        </div>
-
-        <!-- Solutions Section -->
-        <div>
-            <h3
-                class="text-3xl md:text-4xl font-bold text-[#0A1931] mb-12 text-center"
-            >
-                {solutionsTitle}
-            </h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
-                    solutions.map((solution) => (
-                        <div class="group p-8 bg-gradient-to-br from-white to-[#F5F5F5] rounded-2xl border border-[#99B0BB]/20 hover:border-[#99B0BB]/40 transition-all duration-300 hover:shadow-xl">
-                            <div
-                                class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-transform duration-300 group-hover:scale-110"
-                                style={`background-color: ${accentColor};`}
-                            >
-                                <svg
-                                    class="w-7 h-7 text-white"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    viewBox="0 0 24 24"
+                    benefits.map((benefit, index) => (
+                        <div class="group relative">
+                            <!-- Card Background with organic shape -->
+                            <div class="absolute inset-0 bg-white rounded-3xl shadow-lg border border-[#99B0BB]/10 group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105"></div>
+                            
+                            <!-- Decorative blob -->
+                            <div 
+                                class="absolute -top-2 -right-2 w-16 h-16 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                                style={`background: linear-gradient(135deg, ${accentColor}40, ${accentColor}20); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;`}
+                            ></div>
+                            
+                            <div class="relative p-8 flex items-start gap-5">
+                                <div
+                                    class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
+                                    style={`background: linear-gradient(135deg, ${accentColor}, ${accentColor}CC);`}
                                 >
-                                    <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
-                                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                                    />
-                                </svg>
+                                    <svg
+                                        class="w-7 h-7 text-white"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            stroke-width="2.5"
+                                            d="M5 13l4 4L19 7"
+                                        />
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <p class="text-lg text-[#0A1931] font-semibold leading-relaxed group-hover:text-[#F48C06] transition-colors duration-300">
+                                        {benefit}
+                                    </p>
+                                </div>
                             </div>
-                            <h4 class="text-xl md:text-2xl font-bold text-[#0A1931] mb-3">
-                                {solution.title}
-                            </h4>
-                            <p class="text-base text-[#7E7E7E] leading-relaxed">
-                                {solution.description}
-                            </p>
                         </div>
                     ))
                 }
             </div>
         </div>
+
+        <!-- Solutions Section -->
+        <div class="relative">
+            <!-- Section Background -->
+            <div class="absolute inset-0 bg-gradient-to-br from-[#0A1931]/5 to-[#1B4D7E]/5 rounded-3xl"></div>
+            
+            <div class="relative p-12 md:p-16">
+                <div class="text-center mb-16">
+                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A1931] mb-6">
+                        {solutionsTitle}
+                        <div class="w-20 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
+                    </h3>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-items-center">
+                    {
+                        solutions.map((solution, index) => (
+                            <div class="solution-card-parent">
+                                <div class="solution-card">
+                                    <div class="solution-glass"></div>
+                                    <div class="solution-content">
+                                        <span class="solution-title">{solution.title}</span>
+                                        <span class="solution-text">{solution.description}</span>
+                                    </div>
+                                    <div class="solution-logo">
+                                        <span class="solution-circle solution-circle1"></span>
+                                        <span class="solution-circle solution-circle2"></span>
+                                        <span class="solution-circle solution-circle3"></span>
+                                        <span class="solution-circle solution-circle4"></span>
+                                        <span class="solution-circle solution-circle5">
+                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="solution-icon-svg">
+                                                {index % 2 === 0 ? (
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                                                        fill="currentColor"
+                                                    />
+                                                ) : (
+                                                    <path
+                                                        stroke-linecap="round"
+                                                        stroke-linejoin="round"
+                                                        stroke-width="2"
+                                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
+                                                        fill="currentColor"
+                                                    />
+                                                )}
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
     </div>
 </section>
+
+<style>
+/* 3D Solution Cards - Adapted from Uiverse.io by Smit-Prajapati */
+.solution-card-parent {
+    width: 350px;
+    height: 400px;
+    perspective: 1000px;
+}
+
+.solution-card {
+    height: 100%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #F48C06 0%, #0A1931 100%);
+    transition: all 0.5s ease-in-out;
+    transform-style: preserve-3d;
+    box-shadow: rgba(10, 25, 49, 0) 40px 50px 25px -40px, rgba(10, 25, 49, 0.2) 0px 25px 25px -5px;
+}
+
+.solution-glass {
+    transform-style: preserve-3d;
+    position: absolute;
+    inset: 8px;
+    border-radius: 55px;
+    border-top-right-radius: 100%;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
+    transform: translate3d(0px, 0px, 25px);
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+    transition: all 0.5s ease-in-out;
+}
+
+.solution-content {
+    padding: 120px 40px 0px 30px;
+    transform: translate3d(0, 0, 26px);
+}
+
+.solution-content .solution-title {
+    display: block;
+    color: #0A1931;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.solution-content .solution-text {
+    display: block;
+    color: rgba(10, 25, 49, 0.8);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+
+.solution-bottom {
+    padding: 10px 12px;
+    transform-style: preserve-3d;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transform: translate3d(0, 0, 26px);
+}
+
+.solution-bottom .solution-view-more {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.solution-bottom .solution-view-more:hover {
+    transform: translate3d(0, 0, 10px);
+}
+
+.solution-bottom .solution-view-more .solution-view-more-button {
+    background: none;
+    border: none;
+    color: #0A1931;
+    font-weight: bolder;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.solution-bottom .solution-view-more .solution-svg {
+    fill: none;
+    stroke: #0A1931;
+    stroke-width: 3px;
+    max-height: 15px;
+    margin-left: 5px;
+}
+
+.solution-logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform-style: preserve-3d;
+}
+
+.solution-logo .solution-circle {
+    display: block;
+    position: absolute;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
+    backdrop-filter: blur(5px);
+    background: rgba(244, 140, 6, 0.2);
+    transition: all 0.5s ease-in-out;
+}
+
+.solution-logo .solution-circle1 {
+    width: 170px;
+    transform: translate3d(0, 0, 20px);
+    top: 8px;
+    right: 8px;
+}
+
+.solution-logo .solution-circle2 {
+    width: 140px;
+    transform: translate3d(0, 0, 40px);
+    top: 10px;
+    right: 10px;
+    backdrop-filter: blur(1px);
+    transition-delay: 0.4s;
+}
+
+.solution-logo .solution-circle3 {
+    width: 110px;
+    transform: translate3d(0, 0, 60px);
+    top: 17px;
+    right: 17px;
+    transition-delay: 0.8s;
+}
+
+.solution-logo .solution-circle4 {
+    width: 80px;
+    transform: translate3d(0, 0, 80px);
+    top: 23px;
+    right: 23px;
+    transition-delay: 1.2s;
+}
+
+.solution-logo .solution-circle5 {
+    width: 50px;
+    transform: translate3d(0, 0, 100px);
+    top: 30px;
+    right: 30px;
+    display: grid;
+    place-content: center;
+    transition-delay: 1.6s;
+    background: rgba(244, 140, 6, 0.9);
+}
+
+.solution-logo .solution-circle5 .solution-icon-svg {
+    width: 20px;
+    color: white;
+}
+
+.solution-card-parent:hover .solution-card {
+    transform: rotate3d(1, 1, 0, 30deg);
+    box-shadow: rgba(10, 25, 49, 0.3) 30px 50px 25px -40px, rgba(10, 25, 49, 0.1) 0px 25px 30px 0px;
+}
+
+.solution-card-parent:hover .solution-card .solution-logo .solution-circle2 {
+    transform: translate3d(0, 0, 60px);
+}
+
+.solution-card-parent:hover .solution-card .solution-logo .solution-circle3 {
+    transform: translate3d(0, 0, 80px);
+}
+
+.solution-card-parent:hover .solution-card .solution-logo .solution-circle4 {
+    transform: translate3d(0, 0, 100px);
+}
+
+.solution-card-parent:hover .solution-card .solution-logo .solution-circle5 {
+    transform: translate3d(0, 0, 120px);
+}
+
+@media (max-width: 1024px) {
+    .solution-card-parent {
+        width: 320px;
+        height: 380px;
+    }
+    
+    .solution-content {
+        padding: 100px 30px 0px 25px;
+    }
+    
+    .solution-content .solution-title {
+        font-size: 20px;
+    }
+    
+    .solution-content .solution-text {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 640px) {
+    .solution-card-parent {
+        width: 300px;
+        height: 360px;
+    }
+    
+    .solution-content {
+        padding: 90px 25px 0px 20px;
+    }
+    
+    .solution-content .solution-title {
+        font-size: 18px;
+    }
+    
+    .solution-content .solution-text {
+        font-size: 13px;
+    }
+}
+</style>
