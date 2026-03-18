@@ -7,7 +7,10 @@ export interface Props {
     backLink?: string;
     title: string;
     subtitle?: string;
-    benefits: string[];
+    benefits: Array<{
+        title: string;
+        description: string;
+    }>;
     solutionsTitle: string;
     solutions: Array<{
         title: string;
@@ -64,10 +67,10 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
             <div class="inline-block mb-6">
                 <div class="relative">
                     <Badge text={badgeText} />
-                    <div class="absolute -inset-2 bg-gradient-to-r from-[#F48C06]/20 to-[#0A1931]/20 rounded-full blur-xl -z-10"></div>
+                    
                 </div>
             </div>
-            <h2 class="text-5xl md:text-6xl lg:text-7xl font-bold text-[#0A1931] mb-8 leading-tight">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1931] mb-8 leading-tight">
                 {title}
                 <div class="w-24 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
             </h2>
@@ -76,7 +79,7 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
                     <p class="text-xl md:text-2xl text-[#7E7E7E] max-w-4xl mx-auto leading-relaxed">
                         {subtitle}{" "}
                         <span
-                            class="font-bold bg-gradient-to-r from-[#F48C06] to-[#0A1931] bg-clip-text text-transparent"
+                            class="font-bold text-[#F48C06]"
                         >
                             Build Pro
                         </span>
@@ -88,41 +91,44 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
 
         <!-- Benefits Grid -->
         <div class="mb-24">
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
                 {
                     benefits.map((benefit, index) => (
                         <div class="group relative">
-                            <!-- Card Background with organic shape -->
-                            <div class="absolute inset-0 bg-white rounded-3xl shadow-lg border border-[#99B0BB]/10 group-hover:shadow-2xl transition-all duration-500 group-hover:scale-105"></div>
-                            
-                            <!-- Decorative blob -->
-                            <div 
-                                class="absolute -top-2 -right-2 w-16 h-16 rounded-full opacity-20 group-hover:opacity-30 transition-opacity duration-300"
-                                style={`background: linear-gradient(135deg, ${accentColor}40, ${accentColor}20); border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;`}
-                            ></div>
-                            
-                            <div class="relative p-8 flex items-start gap-5">
-                                <div
-                                    class="flex-shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300"
-                                    style={`background: linear-gradient(135deg, ${accentColor}, ${accentColor}CC);`}
-                                >
-                                    <svg
-                                        class="w-7 h-7 text-white"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
+                            <!-- Main Card -->
+                            <div class="relative bg-white rounded-3xl p-8 border border-[#99B0BB]/10 shadow-lg hover:shadow-2xl transition-all duration-500 hover:scale-105 overflow-hidden">
+                                <!-- Decorative gradient overlay -->
+                                <div class="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[#F48C06]/10 to-transparent rounded-bl-full"></div>
+                                
+                                <!-- Icon -->
+                                <div class="relative mb-6">
+                                    <div
+                                        class="w-14 h-14 rounded-2xl flex items-center justify-center shadow-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-3"
+                                        style={`background: linear-gradient(135deg, ${accentColor}, ${accentColor}DD);`}
                                     >
-                                        <path
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                            stroke-width="2.5"
-                                            d="M5 13l4 4L19 7"
-                                        />
-                                    </svg>
+                                        <svg
+                                            class="w-7 h-7 text-white"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2.5"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                    </div>
                                 </div>
-                                <div class="flex-1">
-                                    <p class="text-lg text-[#0A1931] font-semibold leading-relaxed group-hover:text-[#F48C06] transition-colors duration-300">
-                                        {benefit}
+                                
+                                <!-- Content -->
+                                <div class="relative">
+                                    <h4 class="text-xl font-bold text-[#0A1931] mb-3 group-hover:text-[#F48C06] transition-colors duration-300">
+                                        {benefit.title}
+                                    </h4>
+                                    <p class="text-base text-[#7E7E7E] leading-relaxed">
+                                        {benefit.description}
                                     </p>
                                 </div>
                             </div>
@@ -132,284 +138,5 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
             </div>
         </div>
 
-        <!-- Solutions Section -->
-        <div class="relative">
-            <!-- Section Background -->
-            <div class="absolute inset-0 bg-gradient-to-br from-[#0A1931]/5 to-[#1B4D7E]/5 rounded-3xl"></div>
-            
-            <div class="relative p-12 md:p-16">
-                <div class="text-center mb-16">
-                    <h3 class="text-4xl md:text-5xl lg:text-6xl font-bold text-[#0A1931] mb-6">
-                        {solutionsTitle}
-                        <div class="w-20 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
-                    </h3>
-                </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 justify-items-center">
-                    {
-                        solutions.map((solution, index) => (
-                            <div class="solution-card-parent">
-                                <div class="solution-card">
-                                    <div class="solution-glass"></div>
-                                    <div class="solution-content">
-                                        <span class="solution-title">{solution.title}</span>
-                                        <span class="solution-text">{solution.description}</span>
-                                    </div>
-                                    <div class="solution-logo">
-                                        <span class="solution-circle solution-circle1"></span>
-                                        <span class="solution-circle solution-circle2"></span>
-                                        <span class="solution-circle solution-circle3"></span>
-                                        <span class="solution-circle solution-circle4"></span>
-                                        <span class="solution-circle solution-circle5">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="solution-icon-svg">
-                                                {index % 2 === 0 ? (
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M13 10V3L4 14h7v7l9-11h-7z"
-                                                        fill="currentColor"
-                                                    />
-                                                ) : (
-                                                    <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                                                        fill="currentColor"
-                                                    />
-                                                )}
-                                            </svg>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        ))
-                    }
-                </div>
-            </div>
-        </div>
     </div>
 </section>
-
-<style>
-/* 3D Solution Cards - Adapted from Uiverse.io by Smit-Prajapati */
-.solution-card-parent {
-    width: 350px;
-    height: 400px;
-    perspective: 1000px;
-}
-
-.solution-card {
-    height: 100%;
-    border-radius: 50px;
-    background: linear-gradient(135deg, #F48C06 0%, #0A1931 100%);
-    transition: all 0.5s ease-in-out;
-    transform-style: preserve-3d;
-    box-shadow: rgba(10, 25, 49, 0) 40px 50px 25px -40px, rgba(10, 25, 49, 0.2) 0px 25px 25px -5px;
-}
-
-.solution-glass {
-    transform-style: preserve-3d;
-    position: absolute;
-    inset: 8px;
-    border-radius: 55px;
-    border-top-right-radius: 100%;
-    background: linear-gradient(0deg, rgba(255, 255, 255, 0.349) 0%, rgba(255, 255, 255, 0.815) 100%);
-    transform: translate3d(0px, 0px, 25px);
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
-    transition: all 0.5s ease-in-out;
-}
-
-.solution-content {
-    padding: 120px 40px 0px 30px;
-    transform: translate3d(0, 0, 26px);
-}
-
-.solution-content .solution-title {
-    display: block;
-    color: #0A1931;
-    font-weight: 900;
-    font-size: 24px;
-    line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-.solution-content .solution-text {
-    display: block;
-    color: rgba(10, 25, 49, 0.8);
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 20px;
-}
-
-.solution-bottom {
-    padding: 10px 12px;
-    transform-style: preserve-3d;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    transform: translate3d(0, 0, 26px);
-}
-
-.solution-bottom .solution-view-more {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-}
-
-.solution-bottom .solution-view-more:hover {
-    transform: translate3d(0, 0, 10px);
-}
-
-.solution-bottom .solution-view-more .solution-view-more-button {
-    background: none;
-    border: none;
-    color: #0A1931;
-    font-weight: bolder;
-    font-size: 14px;
-    cursor: pointer;
-}
-
-.solution-bottom .solution-view-more .solution-svg {
-    fill: none;
-    stroke: #0A1931;
-    stroke-width: 3px;
-    max-height: 15px;
-    margin-left: 5px;
-}
-
-.solution-logo {
-    position: absolute;
-    right: 0;
-    top: 0;
-    transform-style: preserve-3d;
-}
-
-.solution-logo .solution-circle {
-    display: block;
-    position: absolute;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    top: 0;
-    right: 0;
-    box-shadow: rgba(100, 100, 111, 0.2) -10px 10px 20px 0px;
-    backdrop-filter: blur(5px);
-    background: rgba(244, 140, 6, 0.2);
-    transition: all 0.5s ease-in-out;
-}
-
-.solution-logo .solution-circle1 {
-    width: 170px;
-    transform: translate3d(0, 0, 20px);
-    top: 8px;
-    right: 8px;
-}
-
-.solution-logo .solution-circle2 {
-    width: 140px;
-    transform: translate3d(0, 0, 40px);
-    top: 10px;
-    right: 10px;
-    backdrop-filter: blur(1px);
-    transition-delay: 0.4s;
-}
-
-.solution-logo .solution-circle3 {
-    width: 110px;
-    transform: translate3d(0, 0, 60px);
-    top: 17px;
-    right: 17px;
-    transition-delay: 0.8s;
-}
-
-.solution-logo .solution-circle4 {
-    width: 80px;
-    transform: translate3d(0, 0, 80px);
-    top: 23px;
-    right: 23px;
-    transition-delay: 1.2s;
-}
-
-.solution-logo .solution-circle5 {
-    width: 50px;
-    transform: translate3d(0, 0, 100px);
-    top: 30px;
-    right: 30px;
-    display: grid;
-    place-content: center;
-    transition-delay: 1.6s;
-    background: rgba(244, 140, 6, 0.9);
-}
-
-.solution-logo .solution-circle5 .solution-icon-svg {
-    width: 20px;
-    color: white;
-}
-
-.solution-card-parent:hover .solution-card {
-    transform: rotate3d(1, 1, 0, 30deg);
-    box-shadow: rgba(10, 25, 49, 0.3) 30px 50px 25px -40px, rgba(10, 25, 49, 0.1) 0px 25px 30px 0px;
-}
-
-.solution-card-parent:hover .solution-card .solution-logo .solution-circle2 {
-    transform: translate3d(0, 0, 60px);
-}
-
-.solution-card-parent:hover .solution-card .solution-logo .solution-circle3 {
-    transform: translate3d(0, 0, 80px);
-}
-
-.solution-card-parent:hover .solution-card .solution-logo .solution-circle4 {
-    transform: translate3d(0, 0, 100px);
-}
-
-.solution-card-parent:hover .solution-card .solution-logo .solution-circle5 {
-    transform: translate3d(0, 0, 120px);
-}
-
-@media (max-width: 1024px) {
-    .solution-card-parent {
-        width: 320px;
-        height: 380px;
-    }
-    
-    .solution-content {
-        padding: 100px 30px 0px 25px;
-    }
-    
-    .solution-content .solution-title {
-        font-size: 20px;
-    }
-    
-    .solution-content .solution-text {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 640px) {
-    .solution-card-parent {
-        width: 300px;
-        height: 360px;
-    }
-    
-    .solution-content {
-        padding: 90px 25px 0px 20px;
-    }
-    
-    .solution-content .solution-title {
-        font-size: 18px;
-    }
-    
-    .solution-content .solution-text {
-        font-size: 13px;
-    }
-}
-</style>
