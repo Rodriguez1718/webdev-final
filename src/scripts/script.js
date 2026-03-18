@@ -46,12 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-item[href]');
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', function () {
-      burgerBtn?.setAttribute('aria-expanded', 'false');
-      burgerBtn?.classList.remove('open');
-      mobileMenu?.style.maxHeight = '0px';
-      tradesDropdown?.classList.add('hidden');
-      tradesDropdownBtn?.setAttribute('aria-expanded', 'false');
-      tradesDropdownIcon?.classList.remove('rotate-180');
+      if (burgerBtn) {
+        burgerBtn.setAttribute('aria-expanded', 'false');
+        burgerBtn.classList.remove('open');
+      }
+      if (mobileMenu) {
+        mobileMenu.style.maxHeight = '0px';
+      }
+      if (tradesDropdown) {
+        tradesDropdown.classList.add('hidden');
+      }
+      if (tradesDropdownBtn) {
+        tradesDropdownBtn.setAttribute('aria-expanded', 'false');
+      }
+      if (tradesDropdownIcon) {
+        tradesDropdownIcon.classList.remove('rotate-180');
+      }
     });
   });
 });
