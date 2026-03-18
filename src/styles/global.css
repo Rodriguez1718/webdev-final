@@ -167,3 +167,14 @@
 .burger-btn.open .line-bottom {
   width: 24px;
 }
+
+
+/* Navbar Active States */
+.nav-item.active {
+  color: var(--helios-orange);
+}
+
+.mobile-nav-item.active {
+  color: var(--helios-orange);
+  background-color: rgba(244, 140, 6, 0.1);
+}
