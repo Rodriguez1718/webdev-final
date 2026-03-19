@@ -2,6 +2,7 @@
 // CTA Section Component - Professional call-to-action with form
 // Placed above footer on all pages
 import Button from "../ui/Button.astro";
+import FormInput from "../ui/FormInput.astro";
 
 export interface Props {
   title?: string;
@@ -49,7 +50,7 @@ const {
         <div class="space-y-4 pt-4">
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+              class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
               style="background-color: var(--helios-orange);"
             >
               <svg
@@ -73,7 +74,7 @@ const {
 
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+              class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
               style="background-color: var(--helios-orange);"
             >
               <svg
@@ -97,7 +98,7 @@ const {
 
           <div class="flex items-start gap-4">
             <div
-              class="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
+              class="shrink-0 w-10 h-10 rounded-full flex items-center justify-center"
               style="background-color: var(--helios-orange);"
             >
               <svg
@@ -123,7 +124,7 @@ const {
 
       <!-- Right CTA Card -->
       <div
-        class="bg-gradient-to-br from-[#0A1931] to-[#1a2a4a] rounded-2xl p-8 md:p-10 shadow-xl"
+        class="bg-linear-to-br from-[#0A1931] to-[#1a2a4a] rounded-2xl p-8 md:p-10 shadow-xl"
       >
         <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">
           Book a free consultation
@@ -134,53 +135,50 @@ const {
 
         <!-- Contact Form -->
         <form class="space-y-4">
-          <div>
-            <input
-              type="text"
-              placeholder="Your Name"
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-[var(--helios-orange)] transition-colors duration-200"
-              required
-            />
-          </div>
+          <FormInput
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            variant="light"
+            required
+          />
 
-          <div>
-            <input
-              type="email"
-              placeholder="Your Email"
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-[var(--helios-orange)] transition-colors duration-200"
-              required
-            />
-          </div>
+          <FormInput
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            variant="light"
+            required
+          />
 
-          <div>
-            <input
-              type="tel"
-              placeholder="Your Phone Number"
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-[var(--helios-orange)] transition-colors duration-200"
-              required
-            />
-          </div>
+          <FormInput
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+            variant="light"
+            required
+          />
 
-          <div>
-            <select
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:outline-none focus:border-[var(--helios-orange)] transition-colors duration-200"
-              required
-            >
-              <option value="" disabled selected class="text-[#0A1931]"
-                >Select Your Trade</option
-              >
-              <option value="hvac" class="text-[#0A1931]">HVAC</option>
-              <option value="plumbing" class="text-[#0A1931]">Plumbing</option>
-            </select>
-          </div>
+          <FormInput
+            type="select"
+            name="trade"
+            placeholder="Select Your Trade"
+            options={[
+              { value: "hvac", label: "HVAC" },
+              { value: "plumbing", label: "Plumbing" },
+            ]}
+            variant="light"
+            required
+          />
 
-          <div>
-            <textarea
-              placeholder="Tell us about your project"
-              rows="4"
-              class="w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-white/50 focus:outline-none focus:border-[var(--helios-orange)] transition-colors duration-200 resize-none"
-            ></textarea>
-          </div>
+          <FormInput
+            type="textarea"
+            name="message"
+            placeholder="Tell us about your project"
+            rows={4}
+            variant="light"
+            required
+          />
 
           <Button variant="primary" fullWidth>
             Get Your Free Consultation
