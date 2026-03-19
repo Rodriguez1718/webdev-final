@@ -1,6 +1,5 @@
 ---
 // Approach Component - Showcases the company's methodology and process
-import Badge from "../ui/Badge.astro";
 import Button from "../ui/Button.astro";
 
 export interface Props {
@@ -24,8 +23,13 @@ const titleParts = title.split(highlightWord);
     <div class="max-w-7xl mx-auto">
         <!-- Header -->
         <div class="text-center mb-16">
-            <Badge text="HOW WE WORK" variant="orange" />
-            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            <span
+                class="text-sm font-semibold tracking-widest uppercase"
+                style="color: var(--helios-orange);"
+            >
+                HOW WE WORK
+            </span>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 mt-4">
                 {titleParts[0]}
                 <span class="text-[#F48C06]">{highlightWord}</span>
                 {titleParts[1]}
