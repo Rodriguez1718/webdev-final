@@ -1,11 +1,12 @@
 ---
 // Contact Form Component - Modern side-by-side layout with glass morphism
 import Button from "../ui/Button.astro";
+import FormInput from "../ui/FormInput.astro";
 ---
 
 <!-- Main Contact Section -->
 <section
-    class="py-20 md:py-28 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0a1931] to-[#1a2a4a]"
+    class="py-20 md:py-28 px-4 md:px-6 lg:px-8 bg-linear-to-br from-[#0a1931] to-[#1a2a4a]"
 >
     <div class="max-w-7xl mx-auto">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
@@ -171,84 +172,61 @@ import Button from "../ui/Button.astro";
                 </p>
 
                 <form id="contactForm" class="space-y-4">
-                    <!-- Name -->
-                    <div>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Your Name"
-                            class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition-all duration-200"
-                            required
-                        />
-                    </div>
+                    <FormInput
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Your Name"
+                        variant="glass"
+                        required
+                    />
 
-                    <!-- Email -->
-                    <div>
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Your Email"
-                            class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition-all duration-200"
-                            required
-                        />
-                    </div>
+                    <FormInput
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Your Email"
+                        variant="glass"
+                        required
+                    />
 
-                    <!-- Phone -->
-                    <div>
-                        <input
-                            type="tel"
-                            id="phone"
-                            name="phone"
-                            placeholder="Your Phone"
-                            class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition-all duration-200"
-                            required
-                        />
-                    </div>
+                    <FormInput
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Your Phone"
+                        variant="glass"
+                        required
+                    />
 
-                    <!-- Trade -->
-                    <div>
-                        <select
-                            id="trade"
-                            name="trade"
-                            class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white focus:outline-none focus:border-white focus:bg-white/30 transition-all duration-200"
-                            required
-                        >
-                            <option
-                                value=""
-                                disabled
-                                selected
-                                class="text-[#0A1931]"
-                                >Select your trade...</option
-                            >
-                            <option value="hvac" class="text-[#0A1931]"
-                                >HVAC</option
-                            >
-                            <option value="plumbing" class="text-[#0A1931]"
-                                >Plumbing</option
-                            >
-                            <option value="other" class="text-[#0A1931]"
-                                >Other</option
-                            >
-                        </select>
-                    </div>
+                    <FormInput
+                        type="select"
+                        id="trade"
+                        name="trade"
+                        placeholder="Select your trade..."
+                        options={[
+                            { value: "hvac", label: "HVAC" },
+                            { value: "plumbing", label: "Plumbing" },
+                            { value: "other", label: "Other" },
+                        ]}
+                        variant="glass"
+                        required
+                    />
 
-                    <!-- Message -->
-                    <div>
-                        <textarea
-                            id="message"
-                            name="message"
-                            placeholder="Tell us about your project..."
-                            rows="4"
-                            class="w-full px-4 py-3 rounded-lg bg-white/20 backdrop-blur-sm border border-white/30 text-white placeholder-white/60 focus:outline-none focus:border-white focus:bg-white/30 transition-all duration-200 resize-none"
-                            required></textarea>
-                    </div>
+                    <FormInput
+                        type="textarea"
+                        id="message"
+                        name="message"
+                        placeholder="Tell us about your project..."
+                        rows={4}
+                        variant="glass"
+                        required
+                    />
 
                     <!-- Submit Button -->
                     <button
                         type="submit"
-                        class="w-full inline-flex items-center justify-center gap-2 font-primary font-semibold border-none rounded-xl transition-all duration-300 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F48C06] disabled:opacity-40 disabled:cursor-not-allowed uppercase tracking-wider px-10 py-5 text-lg bg-gradient-to-br from-[#F48C06] to-[#ff6b35] text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(244,140,6,0.3)] active:translate-y-0"
+                        class="w-full inline-flex items-center justify-center gap-2 font-primary font-semibold border-none rounded-xl transition-all duration-300 cursor-pointer select-none focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#F48C06] disabled:opacity-40 disabled:cursor-not-allowed uppercase tracking-wider px-10 py-5 text-lg bg-linear-to-br from-[#F48C06] to-[#ff6b35] text-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(244,140,6,0.3)] active:translate-y-0"
                     >
                         Get Your Free Consultation
                     </button>
