@@ -1,6 +1,6 @@
 ---
 // Values Component - Showcases company values and mission
-import Card from "../ui/Card.astro";
+import Badge from "../ui/Badge.astro";
 
 export interface Props {
   title?: string;
@@ -51,17 +51,12 @@ const iconPaths: Record<string, string> = {
 };
 ---
 
-<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#0a1931] to-[#1a2a4a]">
+<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-parchment">
   <div class="max-w-7xl mx-auto">
     <!-- Header -->
     <div class="text-center mb-16">
-      <span
-        class="text-sm font-semibold tracking-widest uppercase"
-        style="color: var(--helios-orange);"
-      >
-        OUR VALUES
-      </span>
-      <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 mt-4">
+      <Badge text="OUR VALUES" variant="orange" />
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
         {titleParts[0]}
         <span class="text-[#F48C06]">{highlightWord}</span>
         {titleParts[1]}
@@ -74,14 +69,25 @@ const iconPaths: Record<string, string> = {
     <!-- Values Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
       {values.map((value) => (
-        <Card title={value.title} description={value.description}>
+        <div class="group relative bg-white border border-[#99B0BB] rounded-xl p-8 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 hover:border-[#F48C06]">
           <!-- Icon -->
           <div class="w-16 h-16 rounded-full bg-gradient-to-br from-[#F48C06] to-[#ff6b35] flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
             <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={iconPaths[value.icon] || iconPaths.target}></path>
             </svg>
           </div>
-        </Card>
+
+          <!-- Content -->
+          <h3 class="text-xl font-bold text-[#0A1931] mb-3 group-hover:text-[#F48C06] transition-colors duration-300">
+            {value.title}
+          </h3>
+          <p class="text-sm text-[#7E7E7E] leading-relaxed">
+            {value.description}
+          </p>
+
+          <!-- Decorative element -->
+          <div class="absolute top-0 right-0 w-20 h-20 bg-[#F48C06]/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        </div>
       ))}
     </div>
   </div>
