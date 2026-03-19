@@ -4,64 +4,19 @@ import CTASection from "../components/layout/CTASection.astro";
 import FAQ from "../components/layout/FAQ.astro";
 import Hero2 from "../components/layout/Hero2.astro";
 import Card from "../components/ui/Card.astro";
+import Services from "../components/layout/ServicePillars.astro";
 ---
 
 <BaseLayout>
     <main>
         <Hero2
             eyebrow="OUR SERVICES"
-            headline="What We Do"
-            highlightWord="Do"
-            description="We provide comprehensive digital solutions designed specifically for contractors and trades professionals to grow their businesses online."
+            headline="Digital Blueprints for the Modern Tradesman."
+            highlightWord="Modern Tradesman."
+            description="We design and develop high-conversion website templates specifically for Plumbing and HVAC professionals. Stop losing leads to outdated sites and start dominating your local service area."
             showForm={true}
         />
-        <section class="py-20 px-4 md:px-8 lg:px-12 bg-white">
-            <div class="max-w-7xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2
-                        class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6"
-                    >
-                        Our <span style="color: var(--helios-orange);"
-                            >Services</span
-                        >
-                    </h2>
-                    <p class="text-lg text-[#7E7E7E] max-w-3xl mx-auto">
-                        Comprehensive digital solutions tailored for contractors
-                        and trades professionals
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                    <Card
-                        title="Web Design & Development"
-                        description="Custom-built websites designed to convert visitors into customers. Responsive, fast, and optimized for all devices."
-                        tags={["Web Design", "Development"]}
-                        accent="orange"
-                    />
-
-                    <Card
-                        title="SEO & Local Marketing"
-                        description="Get found by customers searching for your services. Local SEO optimization to dominate your market."
-                        tags={["SEO", "Marketing"]}
-                        accent="orange"
-                    />
-
-                    <Card
-                        title="Booking & CRM Systems"
-                        description="Integrated booking systems and customer management tools to streamline your operations."
-                        tags={["Booking", "CRM"]}
-                        accent="orange"
-                    />
-
-                    <Card
-                        title="Ongoing Support"
-                        description="Dedicated support team available 24/7 to keep your digital presence running smoothly."
-                        tags={["Support", "Maintenance"]}
-                        accent="orange"
-                    />
-                </div>
-            </div>
-        </section>
+        <Services />
         <FAQ />
         <CTASection />
     </main>

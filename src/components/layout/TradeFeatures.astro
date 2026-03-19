@@ -44,23 +44,20 @@ const badgeText = trade === "hvac" ? "HVAC" : "PLUMBING";
         <!-- Section Header -->
         <div class="text-center mb-20">
             <div class="inline-block mb-6">
-                <div class="relative">
-                    <Badge text={badgeText} />
-                    
-                </div>
             </div>
             <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0A1931] mb-8 leading-tight">
                 {title}
-                <div class="w-24 h-1 bg-gradient-to-r from-[#F48C06] to-[#0A1931] mx-auto mt-4 rounded-full"></div>
             </h2>
             {
                 subtitle && (
                     <p class="text-xl md:text-2xl text-[#7E7E7E] max-w-4xl mx-auto leading-relaxed">
                         {subtitle}{" "}
                         <span
-                            class="font-bold text-[#F48C06]"
+                            class="font-bold text-[#0A1931]"
                         >
-                            Build Pro
+                            Build</span><span
+                            class="font-bold text-[#F48C06]"
+                        >Pro
                         </span>
                         .
                     </p>
