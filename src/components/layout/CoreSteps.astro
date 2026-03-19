@@ -46,11 +46,17 @@ const {
 const titleParts = title.split(highlightWord);
 ---
 
-<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-gradient-to-br from-[#F5F5F5] to-white">
+<section class="py-20 md:py-32 px-4 md:px-6 lg:px-8 bg-parchment">
   <div class="max-w-6xl mx-auto">
     <!-- Header -->
     <div class="text-center mb-16">
-      <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6">
+      <span
+        class="text-sm font-semibold tracking-widest uppercase"
+        style="color: var(--helios-orange);"
+      >
+        OUR PROCESS
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold text-[#0A1931] mb-6 mt-4">
         {titleParts[0]}
         <span style="color: var(--helios-orange);">{highlightWord}</span>
         {titleParts[1]}
