@@ -1,6 +1,5 @@
 ---
 // Reviews Section with Horizontal Layout
-import Badge from "../ui/Badge.astro";
 ---
 
 <section
@@ -10,10 +9,13 @@ import Badge from "../ui/Badge.astro";
   <div class="max-w-7xl mx-auto px-8 relative z-10">
     <!-- Section Header -->
     <div class="text-center mb-16">
-      <div class="flex justify-center">
-        <Badge text="Client Success Stories" variant="orange" />
-      </div>
-      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+      <span
+        class="text-sm font-semibold tracking-widest uppercase"
+        style="color: var(--helios-orange);"
+      >
+        CLIENT SUCCESS STORIES
+      </span>
+      <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white mt-4">
         Real Results from <span style="color: var(--helios-orange);"
           >Real Contractors</span
         >
@@ -584,9 +586,9 @@ import Badge from "../ui/Badge.astro";
 
     const originalSlides = Array.from(reviewSlides);
     const totalSlides = originalSlides.length;
-    
+
     // Clone all slides and append to create infinite loop
-    originalSlides.forEach(slide => {
+    originalSlides.forEach((slide) => {
       const clone = slide.cloneNode(true) as HTMLElement;
       reviewsTrack.appendChild(clone);
     });
@@ -600,13 +602,14 @@ import Badge from "../ui/Badge.astro";
 
     function updateCarousel(smooth = true) {
       if (!reviewsTrack) return;
-      
+
       if (smooth) {
-        reviewsTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        reviewsTrack.style.transition =
+          "transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
       } else {
-        reviewsTrack.style.transition = 'none';
+        reviewsTrack.style.transition = "none";
       }
-      
+
       const translateX = -currentSlide * 100;
       reviewsTrack.style.transform = `translateX(${translateX}%)`;
     }
@@ -626,10 +629,10 @@ import Badge from "../ui/Badge.astro";
     function nextSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
-      
+
       currentSlide++;
       updateCarousel(true);
-      
+
       // When we reach the cloned slides, reset to the beginning
       if (currentSlide >= totalSlides) {
         setTimeout(() => {
@@ -647,12 +650,12 @@ import Badge from "../ui/Badge.astro";
     function prevSlide() {
       if (isTransitioning) return;
       isTransitioning = true;
-      
+
       if (currentSlide === 0) {
         // Jump to the last cloned slide instantly
         currentSlide = totalSlides;
         updateCarousel(false);
-        
+
         setTimeout(() => {
           currentSlide--;
           updateCarousel(true);
@@ -692,7 +695,7 @@ import Badge from "../ui/Badge.astro";
     function attachButtonListeners() {
       const allPrevBtns = document.querySelectorAll(".carousel-prev-inner");
       const allNextBtns = document.querySelectorAll(".carousel-next-inner");
-      
+
       allPrevBtns.forEach((btn) => {
         btn.addEventListener("click", () => {
           prevSlide();
