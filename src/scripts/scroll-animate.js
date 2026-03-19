@@ -129,6 +129,7 @@ function ready(fn) {
 //  });
 //
 //  All fields are optional — only "from" is meaningful to set.
+//  Pages that uses the script must put <script src="/src/scripts/name-of-page"></script>
 // ═══════════════════════════════════════════════════════════════
 
 ready(() => {
@@ -140,6 +141,19 @@ ready(() => {
 //    threshold: 0.15,        // 0–1 — how visible before triggering
 //    once:      true,        // false = re-animate every time it enters view
 //  });
+    animate("trade-solutions", {
+    from:      "fade-up",   // where it comes from  (see PRESETS)
+    delay:     0,           // ms — pause before playing
+    duration:  700,         // ms — how long it takes
+    threshold: 0.15,        // 0–1 — how visible before triggering
+    once:      true,        // false = re-animate every time it enters view
+  });
+    animate("title", {
+    from:      "fade-up",  
+    delay:     0,       
+    duration:  700,    
+    threshold: 0.15,     
+    once:      true,       
+  });
 
-    
 });
