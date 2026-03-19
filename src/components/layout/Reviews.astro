@@ -29,7 +29,7 @@ import Badge from "../ui/Badge.astro";
 
     <!-- Reviews Carousel -->
     <div
-      class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100"
+      class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-gray-100 w-full"
     >
       <div class="grid grid-cols-1 md:grid-cols-2 gap-0">
         <!-- Image Section - Fixed with Auto Carousel -->
@@ -580,18 +580,35 @@ import Badge from "../ui/Badge.astro";
     ) as HTMLElement | null;
     const images = document.querySelectorAll(".image-carousel");
 
+    if (!reviewsTrack) return;
+
+    const originalSlides = Array.from(reviewSlides);
+    const totalSlides = originalSlides.length;
+    
+    // Clone all slides and append to create infinite loop
+    originalSlides.forEach(slide => {
+      const clone = slide.cloneNode(true) as HTMLElement;
+      reviewsTrack.appendChild(clone);
+    });
+
     let currentSlide = 0;
-    const totalSlides = reviewSlides.length;
     let currentImageIndex = 0;
     const totalImages = images.length;
     let autoSlideInterval: ReturnType<typeof setInterval> | null = null;
     let autoImageInterval: ReturnType<typeof setInterval> | null = null;
+    let isTransitioning = false;
 
-    function updateCarousel() {
+    function updateCarousel(smooth = true) {
       if (!reviewsTrack) return;
+      
+      if (smooth) {
+        reviewsTrack.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+      } else {
+        reviewsTrack.style.transition = 'none';
+      }
+      
       const translateX = -currentSlide * 100;
-      (reviewsTrack as HTMLElement).style.transform =
-        `translateX(${translateX}%)`;
+      reviewsTrack.style.transform = `translateX(${translateX}%)`;
     }
 
     function updateImages() {
@@ -607,13 +624,49 @@ import Badge from "../ui/Badge.astro";
     }
 
     function nextSlide() {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateCarousel();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      
+      currentSlide++;
+      updateCarousel(true);
+      
+      // When we reach the cloned slides, reset to the beginning
+      if (currentSlide >= totalSlides) {
+        setTimeout(() => {
+          currentSlide = 0;
+          updateCarousel(false);
+          isTransitioning = false;
+        }, 600);
+      } else {
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 600);
+      }
     }
 
     function prevSlide() {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateCarousel();
+      if (isTransitioning) return;
+      isTransitioning = true;
+      
+      if (currentSlide === 0) {
+        // Jump to the last cloned slide instantly
+        currentSlide = totalSlides;
+        updateCarousel(false);
+        
+        setTimeout(() => {
+          currentSlide--;
+          updateCarousel(true);
+          setTimeout(() => {
+            isTransitioning = false;
+          }, 600);
+        }, 20);
+      } else {
+        currentSlide--;
+        updateCarousel(true);
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 600);
+      }
     }
 
     function nextImage() {
@@ -635,22 +688,27 @@ import Badge from "../ui/Badge.astro";
       }
     }
 
-    // Inner navigation buttons
-    prevBtnInner.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        prevSlide();
-        stopAutoSlide();
-        startAutoSlide();
+    // Re-attach event listeners to all buttons (including cloned ones)
+    function attachButtonListeners() {
+      const allPrevBtns = document.querySelectorAll(".carousel-prev-inner");
+      const allNextBtns = document.querySelectorAll(".carousel-next-inner");
+      
+      allPrevBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          prevSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        });
       });
-    });
 
-    nextBtnInner.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        nextSlide();
-        stopAutoSlide();
-        startAutoSlide();
+      allNextBtns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          nextSlide();
+          stopAutoSlide();
+          startAutoSlide();
+        });
       });
-    });
+    }
 
     // Pause on hover
     if (reviewsContainer) {
@@ -659,7 +717,8 @@ import Badge from "../ui/Badge.astro";
     }
 
     // Initialize
-    updateCarousel();
+    attachButtonListeners();
+    updateCarousel(false);
     updateImages();
     startAutoSlide();
     startAutoImages();
