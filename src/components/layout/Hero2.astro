@@ -1,6 +1,7 @@
 ---
 
 import Button from '../ui/Button.astro';
+import FormInput from '../ui/FormInput.astro';
 // Hero2 Component - Configurable hero section with form and background
 export interface Props {
   eyebrow?: string;
@@ -12,7 +13,6 @@ export interface Props {
   description?: string;
   formTitle?: string;
   formButtonText?: string;
-  backgroundImage?: string;
   showForm?: boolean;
   variant?: 'default' | 'centered' | 'split';
 }
@@ -27,7 +27,6 @@ const {
   description = "Over 2,500 contractors and trades professionals have trusted us to elevate their digital presence. Transform your business online and reach more customers than ever before.",
   formTitle = "Get Your Free Quote Today",
   formButtonText = "Get Started",
-  backgroundImage = "/images/city-bg.jpg",
   showForm = true,
   variant = "split"
 } = Astro.props;
@@ -38,7 +37,7 @@ const headlineParts = headline.split(highlightWord);
 
 <section class="relative min-h-screen flex items-center overflow-hidden">
   <!-- Background with overlay -->
-  <div class="absolute inset-0 bg-gradient-to-br from-[#0D1C34] via-[#0A1931]/90 to-[#1B4D7E]/80"></div>
+  <div class="absolute inset-0 bg-linear-to-br from-[#0D1C34] via-[#0A1931]/90 to-[#1B4D7E]/80"></div>
   
   <!-- Animated background elements -->
   <div class="absolute inset-0 overflow-hidden">
@@ -51,7 +50,7 @@ const headlineParts = headline.split(highlightWord);
       
       
       {variant === 'split' ? (
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center px-[32px]">
           <!-- Left Content -->
           <div>   
             <!-- Back Link - Top of Section -->
@@ -119,45 +118,36 @@ const headlineParts = headline.split(highlightWord);
                 <div class="absolute inset-0 bg-black/10 transform translate-x-3 translate-y-3 clipped-element" style="height: 650px;"></div>
                 
                 <!-- Main form with custom clip path -->
-                <div class="relative bg-gradient-to-br from-white/98 to-[#F5F5F5]/95 backdrop-blur-sm shadow-2xl border border-[#99B0BB]/20 clipped-element" style="height: 650px;">
+                <div class="relative bg-linear-to-br from-white/98 to-[#F5F5F5]/95 backdrop-blur-sm shadow-2xl border border-[#99B0BB]/20 clipped-element" style="height: 650px;">
                   <div class="px-20 py-24 h-full flex flex-col justify-center">
                     <h2 class="text-4xl md:text-5xl font-bold font-primary mb-10 leading-tight text-center" style="color: #0A1931;">
                       {formTitle}
                     </h2>
                     
                     <form class="space-y-6 flex-1 flex flex-col justify-center" id="hero-form-2">
-                      <!-- Name Field -->
-                      <div class="relative">
-                        <input 
-                          type="text" 
-                          name="name"
-                          placeholder="Full Name" 
-                          required
-                          class="w-full px-5 py-4 rounded-2xl border-2 border-[#99B0BB]/30 outline-none font-primary text-[#0A1931] placeholder-[#7E7E7E] focus:border-[#F48C06] focus:ring-2 focus:ring-[#F48C06]/20 transition-all duration-300 bg-white shadow-sm"
-                        />
-                      </div>
+                      <FormInput 
+                        type="text"
+                        name="name"
+                        placeholder="Full Name"
+                        variant="dark"
+                        required
+                      />
                       
-                      <!-- Email Field -->
-                      <div class="relative">
-                        <input 
-                          type="email" 
-                          name="email"
-                          placeholder="Email Address" 
-                          required
-                          class="w-full px-5 py-4 rounded-2xl border-2 border-[#99B0BB]/30 outline-none font-primary text-[#0A1931] placeholder-[#7E7E7E] focus:border-[#F48C06] focus:ring-2 focus:ring-[#F48C06]/20 transition-all duration-300 bg-white shadow-sm"
-                        />
-                      </div>
+                      <FormInput 
+                        type="email"
+                        name="email"
+                        placeholder="Email Address"
+                        variant="dark"
+                        required
+                      />
                       
-                      <!-- Phone Field -->
-                      <div class="relative">
-                        <input 
-                          type="tel" 
-                          name="phone"
-                          placeholder="Phone Number" 
-                          required
-                          class="w-full px-5 py-4 rounded-2xl border-2 border-[#99B0BB]/30 outline-none font-primary text-[#0A1931] placeholder-[#7E7E7E] focus:border-[#F48C06] focus:ring-2 focus:ring-[#F48C06]/20 transition-all duration-300 bg-white shadow-sm"
-                        />
-                      </div>
+                      <FormInput 
+                        type="tel"
+                        name="phone"
+                        placeholder="Phone Number"
+                        variant="dark"
+                        required
+                      />
                       
                       <!-- Submit Button -->
                       <div class="pt-4">
